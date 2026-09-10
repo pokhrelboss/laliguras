@@ -124,7 +124,7 @@ export const Navbar: React.FC = () => {
       {/* Mobile Menu Overlay */}
       {mobileMenuOpen && (
         <div
-          className="fixed inset-x-0 top-[64px] sm:top-[80px] bottom-0 z-40 bg-white/98 backdrop-blur-xl lg:hidden flex flex-col justify-between border-t border-[#E1E7E3] animate-in fade-in slide-in-from-top-4 duration-200 overflow-y-auto"
+          className="fixed left-0 right-0 top-16 sm:top-20 h-[calc(100dvh-64px)] sm:h-[calc(100dvh-80px)] z-50 bg-white lg:hidden flex flex-col justify-between border-t border-[#E1E7E3] shadow-2xl overflow-y-auto"
           role="dialog"
           aria-modal="true"
         >
