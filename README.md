@@ -105,7 +105,7 @@ npm run start
 
 ### Contact Email Delivery
 
-The `/api/demo-request` route sends contact and Request Demo submissions through Resend from the server only. It always sends from and to `team@pokhrel.tech`, and sets the visitor's submitted email as `reply_to`.
+The `/api/demo-request` route sends contact and Request Demo submissions through Resend from the server only. It sends from `Laliguras <noreply@pokhrel.tech>` to `team@pokhrel.tech`, and sets the visitor's submitted email as `reply_to`.
 
 Set the server-only variable in Netlify (and in a local `.env.local` when testing):
 

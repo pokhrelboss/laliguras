@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { DemoRequestPayload } from "@/types";
 
 const RESEND_API_URL = "https://api.resend.com/emails";
-const SENDER_EMAIL = "team@pokhrel.tech";
+const SENDER_EMAIL = "Laliguras <noreply@pokhrel.tech>";
 const RECIPIENT_EMAIL = "team@pokhrel.tech";
 const VALID_INTERESTS = new Set([
   "New Digital Product",
