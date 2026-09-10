@@ -134,39 +134,39 @@ export default function PlatformPage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-6 space-y-6">
               <Badge variant="forest" size="sm">
-                Enterprise Scalability
+                Phase 2 Direction
               </Badge>
               <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0A1914] tracking-tight">
-                Architected for Multi-Tenant White-Label Deployment
+                A Planned Multi-Tenant, White-Label Architecture
               </h2>
               <p className="text-base text-[#3D4F47] leading-relaxed">
-                SafeStep is built with a decoupled multi-tier hierarchy. Enterprise clients and industry partners can deliver branded safety portals with customized curricula, company logos, dedicated learner tracks, and automated compliance notifications.
+                The current codebase includes a typed domain-model foundation for a future organization hierarchy. Tenant separation, branded portals, administrator tools, and automated reporting remain Phase 2 product direction—not production functionality.
               </p>
 
               <div className="space-y-3.5 text-sm text-[#2E4038]">
                 <div className="flex items-start gap-3">
                   <CheckCircle2 className="w-5 h-5 text-[#0E6245] shrink-0 mt-0.5" />
                   <span>
-                    <strong>Dedicated Tenant Partitioning:</strong> Secure separation of employee records, assessments, and proprietary SOPs.
+                    <strong>Tenant Partitioning:</strong> Planned separation of organization records, assessments, and proprietary content.
                   </span>
                 </div>
                 <div className="flex items-start gap-3">
                   <CheckCircle2 className="w-5 h-5 text-[#0E6245] shrink-0 mt-0.5" />
                   <span>
-                    <strong>Custom Branding & Badging:</strong> Apply company logos, custom colors, and corporate certification stamps.
+                    <strong>Custom Branding:</strong> A proposed way to apply organization identity across learner portals.
                   </span>
                 </div>
                 <div className="flex items-start gap-3">
                   <CheckCircle2 className="w-5 h-5 text-[#0E6245] shrink-0 mt-0.5" />
                   <span>
-                    <strong>Centralized Administrator Controls:</strong> Real-time oversight, department filtering, and CSV/PDF audit export.
+                    <strong>Administrator Controls:</strong> A future surface for department filtering, oversight, and reporting exports.
                   </span>
                 </div>
               </div>
 
               <div className="pt-2">
                 <Button href="/contact" variant="primary" size="md">
-                  Discuss Enterprise Deployment
+                  Discuss the Product Roadmap
                 </Button>
               </div>
             </div>
@@ -176,10 +176,10 @@ export default function PlatformPage() {
               <div className="bg-white rounded-2xl p-6 sm:p-8 border border-[#E1E7E3] shadow-lg space-y-4">
                 <div className="flex items-center justify-between pb-3 border-b border-[#E1E7E3]">
                   <span className="text-xs font-bold uppercase tracking-wider text-[#52665C]">
-                    SafeStep Multi-Tenant Hierarchy
+                    Proposed SafeStep Hierarchy
                   </span>
                   <Badge variant="default" size="sm">
-                    Platform Topology
+                    Planned Topology
                   </Badge>
                 </div>
 
@@ -190,10 +190,10 @@ export default function PlatformPage() {
                       <Layers className="w-5 h-5 text-[#E63952]" />
                       <div>
                         <p className="text-xs font-mono text-[#A8BFB5]">TIER 1</p>
-                        <p className="text-sm font-bold">Laliguras Root Engine</p>
+                        <p className="text-sm font-bold">SafeStep Platform Foundation</p>
                       </div>
                     </div>
-                    <span className="text-[11px] bg-[#163E32] px-2 py-0.5 rounded text-[#A8BFB5]">Core Platform</span>
+                    <span className="text-[11px] bg-[#163E32] px-2 py-0.5 rounded text-[#A8BFB5]">Direction</span>
                   </div>
 
                   <div className="flex justify-center -my-1 text-[#CCD6CE]">
