@@ -17,7 +17,7 @@ export default function NotFound() {
             Page Not Found
           </h1>
           <p className="text-base text-[#3D4F47] max-w-md mx-auto leading-relaxed">
-            The safety training resource or page you requested could not be located. It may have been moved, updated, or does not exist.
+            The page or digital resource you requested could not be located. It may have been moved, updated, or does not exist.
           </p>
         </div>
 
@@ -31,12 +31,12 @@ export default function NotFound() {
             Back to Home
           </Button>
           <Button
-            href="/training"
+            href="/projects"
             variant="outline"
             size="md"
             leftIcon={<BookOpen className="w-4 h-4" />}
           >
-            Explore Training Modules
+            Explore Projects
           </Button>
         </div>
 

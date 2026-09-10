@@ -19,16 +19,17 @@ export default function TrainingPage() {
       <Container size="xl" className="space-y-12">
         {/* Page Header */}
         <div className="max-w-3xl mx-auto text-center space-y-4">
-          <Badge variant="crimson" size="sm">
-            Curriculum Catalog
+          <Badge variant="primary" size="md">
+            SAFESTEP COURSEWARE • ENGINEERED BY LALIGURAS
           </Badge>
           <h1 className="text-4xl sm:text-5xl font-extrabold text-[#0A1914] tracking-tight">
             Accredited Workplace Safety Modules
           </h1>
           <p className="text-base sm:text-lg text-[#3D4F47] leading-relaxed">
-            Engineered to fulfill statutory health and safety compliance while instilling proactive habits. Every module combines clear instruction, 360° virtual scenarios, and verifiable certifications.
+            The safety training catalog engineered by <strong>Laliguras</strong> for the <strong>SafeStep</strong> platform. Every module combines clear instruction, 360° virtual scenarios, and verifiable certifications.
           </p>
         </div>
+
 
         {/* Interactive Filterable Catalog */}
         <CourseCatalog initialCourses={COURSES} />

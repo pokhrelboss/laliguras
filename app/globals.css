@@ -66,7 +66,7 @@ body {
   background: #9E1A2F;
 }
 
-/* Subtle Mountain Silhouette Pattern */
+/* Subtle Mountain / Grid Motif */
 .bg-himalaya-pattern {
   background-image: radial-gradient(#0F2D24 0.75px, transparent 0.75px), radial-gradient(#0F2D24 0.75px, #F8FAF8 0.75px);
   background-size: 30px 30px;
@@ -74,7 +74,62 @@ body {
   opacity: 0.04;
 }
 
-/* Prefer reduced motion */
+.bg-dot-grid {
+  background-image: radial-gradient(#0A1914 1px, transparent 1px);
+  background-size: 24px 24px;
+  opacity: 0.035;
+}
+
+/* Keyframes for GPU-accelerated micro-interactions */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes subtleFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-float {
+  animation: subtleFloat 6s ease-in-out infinite;
+}
+
+/* Modern Native CSS View-Timeline Progressive Enhancement */
+@supports ((animation-timeline: view()) and (animation-range: entry 10% cover 30%)) {
+  .scroll-driven-reveal {
+    animation: fadeInUp auto linear both;
+    animation-timeline: view();
+    animation-range: entry 10% cover 30%;
+  }
+}
+
+/* Prefer reduced motion: ensure instantaneous, complete visibility for all elements */
 @media (prefers-reduced-motion: reduce) {
   *, ::before, ::after {
     animation-duration: 0.01ms !important;
@@ -82,4 +137,16 @@ body {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+  .scroll-driven-reveal {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  [data-scroll-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
 }
+
+

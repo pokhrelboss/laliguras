@@ -7,6 +7,7 @@ export interface LaligurasLogoProps {
   variant?: "light" | "dark";
   size?: "sm" | "md" | "lg";
   withLink?: boolean;
+  subtitle?: string;
 }
 
 export const LaligurasLogo: React.FC<LaligurasLogoProps> = ({
@@ -14,6 +15,7 @@ export const LaligurasLogo: React.FC<LaligurasLogoProps> = ({
   variant = "light",
   size = "md",
   withLink = true,
+  subtitle = "Digital Product Studio",
 }) => {
   const isDark = variant === "dark";
 
@@ -89,14 +91,16 @@ export const LaligurasLogo: React.FC<LaligurasLogoProps> = ({
         >
           Laliguras
         </span>
-        <span
-          className={cn(
-            "text-[9px] uppercase tracking-[0.2em] font-semibold mt-0.5",
-            isDark ? "text-[#A8BFB5]" : "text-[#52665C]"
-          )}
-        >
-          Safety Training
-        </span>
+        {subtitle && (
+          <span
+            className={cn(
+              "text-[9px] uppercase tracking-[0.18em] font-semibold mt-0.5",
+              isDark ? "text-[#A8BFB5]" : "text-[#52665C]"
+            )}
+          >
+            {subtitle}
+          </span>
+        )}
       </div>
     </div>
   );

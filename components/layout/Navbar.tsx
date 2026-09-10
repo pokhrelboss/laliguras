@@ -6,14 +6,15 @@ import { usePathname } from "next/navigation";
 import { LaligurasLogo } from "@/components/ui/LaligurasLogo";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Card";
-import { Menu, X, ArrowRight } from "lucide-react";
+import { Menu, X, ArrowRight, Sparkles } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const NAV_LINKS = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about" },
-  { name: "Platform", href: "/platform" },
-  { name: "Training", href: "/training" },
+  { name: "Services", href: "/services" },
+  { name: "Projects", href: "/projects" },
+  { name: "SafeStep", href: "/projects/safestep", badge: "Case Study" },
   { name: "Team", href: "/team" },
   { name: "FAQ", href: "/faq" },
   { name: "Contact", href: "/contact" },
@@ -31,7 +32,6 @@ export const Navbar: React.FC = () => {
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
 
   // Lock body scroll when mobile menu is open
   useEffect(() => {
@@ -62,21 +62,26 @@ export const Navbar: React.FC = () => {
           </div>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden lg:flex items-center gap-1 xl:gap-2" aria-label="Main Navigation">
+          <nav className="hidden xl:flex items-center gap-1 xl:gap-2" aria-label="Main Navigation">
             {NAV_LINKS.map((link) => {
-              const isActive = pathname === link.href;
+              const isActive = pathname === link.href || (link.href !== "/" && pathname.startsWith(link.href));
               return (
                 <Link
                   key={link.name}
                   href={link.href}
                   className={cn(
-                    "px-3 py-2 text-sm font-medium rounded-md transition-colors relative",
+                    "px-3 py-2 text-sm font-medium rounded-md transition-colors relative flex items-center gap-1.5",
                     isActive
                       ? "text-[#9E1A2F] font-semibold"
                       : "text-[#2E4038] hover:text-[#0A1914] hover:bg-[#F1F5F2]"
                   )}
                 >
-                  {link.name}
+                  <span>{link.name}</span>
+                  {link.badge && (
+                    <span className="text-[10px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded-full bg-[#FDF2F4] text-[#9E1A2F] border border-[#F5C7CE]">
+                      {link.badge}
+                    </span>
+                  )}
                   {isActive && (
                     <span className="absolute bottom-0 left-3 right-3 h-0.5 bg-[#9E1A2F] rounded-full" />
                   )}
@@ -86,26 +91,26 @@ export const Navbar: React.FC = () => {
           </nav>
 
           {/* Desktop Right CTA */}
-          <div className="hidden lg:flex items-center gap-3">
+          <div className="hidden xl:flex items-center gap-3">
             <Button
               href="/contact"
               variant="primary"
               size="md"
               rightIcon={<ArrowRight className="w-4 h-4" />}
             >
-              Request Demo
+              Start a Project
             </Button>
           </div>
 
-          {/* Mobile Menu Toggle Button */}
-          <div className="flex lg:hidden items-center gap-2">
+          {/* Tablet / Mobile Menu Toggle Button */}
+          <div className="flex xl:hidden items-center gap-2">
             <Button
               href="/contact"
               variant="primary"
               size="sm"
               className="text-xs px-3"
             >
-              Demo
+              Get in Touch
             </Button>
 
             <button
@@ -124,16 +129,21 @@ export const Navbar: React.FC = () => {
       {/* Mobile Menu Overlay */}
       {mobileMenuOpen && (
         <div
-          className="fixed left-0 right-0 top-16 sm:top-20 h-[calc(100dvh-64px)] sm:h-[calc(100dvh-80px)] z-50 bg-white lg:hidden flex flex-col justify-between border-t border-[#E1E7E3] shadow-2xl overflow-y-auto"
+          className="fixed left-0 right-0 top-16 sm:top-20 h-[calc(100dvh-64px)] sm:h-[calc(100dvh-80px)] z-50 bg-white xl:hidden flex flex-col justify-between border-t border-[#E1E7E3] shadow-2xl overflow-y-auto"
           role="dialog"
           aria-modal="true"
         >
           <div className="p-6 space-y-2">
-            <p className="text-xs font-semibold uppercase tracking-wider text-[#64766E] mb-3">
-              Navigation
-            </p>
+            <div className="flex items-center justify-between mb-3">
+              <p className="text-xs font-semibold uppercase tracking-wider text-[#64766E]">
+                Menu
+              </p>
+              <span className="inline-flex items-center gap-1 text-xs text-[#9E1A2F] font-medium bg-[#FDF2F4] px-2 py-0.5 rounded-full">
+                <Sparkles className="w-3 h-3" /> Digital Studio
+              </span>
+            </div>
             {NAV_LINKS.map((link) => {
-              const isActive = pathname === link.href;
+              const isActive = pathname === link.href || (link.href !== "/" && pathname.startsWith(link.href));
               return (
                 <Link
                   key={link.name}
@@ -146,7 +156,14 @@ export const Navbar: React.FC = () => {
                       : "text-[#0A1914] hover:bg-[#F1F5F2]"
                   )}
                 >
-                  <span>{link.name}</span>
+                  <div className="flex items-center gap-2">
+                    <span>{link.name}</span>
+                    {link.badge && (
+                      <span className="text-[10px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded-full bg-[#FDF2F4] text-[#9E1A2F] border border-[#F5C7CE]">
+                        {link.badge}
+                      </span>
+                    )}
+                  </div>
                   <ArrowRight className="w-4 h-4 opacity-40" />
                 </Link>
               );
@@ -161,11 +178,12 @@ export const Navbar: React.FC = () => {
               size="lg"
               className="w-full justify-center"
               rightIcon={<ArrowRight className="w-5 h-5" />}
+              onClick={() => setMobileMenuOpen(false)}
             >
-              Request a Demo
+              Start a Project
             </Button>
             <p className="text-xs text-center text-[#52665C]">
-              Need assistance? Email{" "}
+              Have an idea? Contact us at{" "}
               <a href="mailto:info@laliguras.com" className="text-[#9E1A2F] underline">
                 info@laliguras.com
               </a>
@@ -176,3 +194,4 @@ export const Navbar: React.FC = () => {
     </header>
   );
 };
+

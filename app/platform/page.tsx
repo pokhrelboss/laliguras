@@ -50,16 +50,17 @@ export default function PlatformPage() {
       <section className="py-16 md:py-24 border-b border-[#E1E7E3] bg-gradient-to-b from-[#F8FAF8] via-white to-[#F8FAF8]">
         <Container size="xl">
           <div className="max-w-3xl mx-auto text-center space-y-6">
-            <Badge variant="crimson" size="sm">
-              SafeStep Architecture
+            <Badge variant="primary" size="md">
+              SAFESTEP PLATFORM • CLIENT BUILD BY LALIGURAS
             </Badge>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-[#0A1914] tracking-tight leading-tight">
-              Comprehensive Training for <br />
-              <span className="text-[#9E1A2F]">Real-World Safety</span>
+              SafeStep: An Integrated Health and <br />
+              <span className="text-[#9E1A2F]">Safety Training Platform</span>
             </h1>
             <p className="text-lg sm:text-xl text-[#3D4F47] leading-relaxed">
-              SafeStep provides an interactive and immersive learning experience designed to build practical knowledge and safer behaviours in the workplace.
+              SafeStep is a flagship client platform designed and engineered by <strong>Laliguras</strong>. It provides an interactive and immersive learning experience designed to build practical knowledge and safer behaviours in the workplace.
             </p>
+
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 pt-2">
               <Button href="/contact" variant="primary" size="lg" rightIcon={<ArrowRight className="w-4 h-4" />}>
                 Request Platform Demo

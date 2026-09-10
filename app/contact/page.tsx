@@ -6,10 +6,11 @@ import { DemoRequestForm } from "@/components/sections/DemoRequestForm";
 import { COMPANY_INFO } from "@/data/company";
 import { Mail, Phone, MapPin, Sparkles } from "lucide-react";
 
+
 export const metadata: Metadata = {
-  title: "Request a Demo | Contact Laliguras",
+  title: "Contact & Project Inquiries | Laliguras",
   description:
-    "Schedule an interactive demonstration of SafeStep or speak with our safety education consultants about your organization's compliance training needs.",
+    "Start a project consultation with Laliguras, request a live demonstration of SafeStep, or discuss custom enterprise platform engineering.",
 };
 
 export default function ContactPage() {
@@ -20,15 +21,15 @@ export default function ContactPage() {
           {/* Left Column: Contact Coordinates & Narrative */}
           <div className="lg:col-span-5 space-y-8">
             <div className="space-y-4">
-              <Badge variant="crimson" size="sm">
-                Get in Touch
+              <Badge variant="primary" size="md">
+                GET IN TOUCH
               </Badge>
               <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#0A1914] tracking-tight leading-tight">
-                Let&apos;s Make Workplaces <br />
-                <span className="text-[#9E1A2F]">Safer Together</span>
+                Let&apos;s Build Something <br />
+                <span className="text-[#9E1A2F]">Exceptional Together</span>
               </h1>
               <p className="text-base text-[#3D4F47] leading-relaxed">
-                Interested in SafeStep? Request a demo, ask a question, or simply say hello. We&apos;re here to partner with your organization and build resilient safety habits.
+                Have an ambitious digital product to engineer, an enterprise learning platform to architect, or want a demo of the SafeStep platform? We&apos;d love to connect.
               </p>
             </div>
 
@@ -49,7 +50,7 @@ export default function ContactPage() {
                     {COMPANY_INFO.contact.email}
                   </a>
                   <p className="text-[11px] text-[#64766E] mt-0.5">
-                    We respond within 24 hours.
+                    Direct engineer response within 24 hours.
                   </p>
                 </div>
               </div>
@@ -69,7 +70,7 @@ export default function ContactPage() {
                     {COMPANY_INFO.contact.phone}
                   </a>
                   <p className="text-[11px] text-[#64766E] mt-0.5">
-                    Monday to Friday, 9am - 5pm NPT
+                    Monday to Friday, 9:00 AM – 6:00 PM NPT
                   </p>
                 </div>
               </div>
@@ -80,7 +81,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <p className="text-xs font-bold uppercase tracking-wider text-[#52665C]">
-                    Office Location
+                    Studio Location
                   </p>
                   <p className="text-sm font-semibold text-[#0A1914]">
                     {COMPANY_INFO.contact.location}
@@ -92,14 +93,14 @@ export default function ContactPage() {
               </div>
             </div>
 
-            {/* Floral / Brand Assurance Card */}
-            <div className="p-6 rounded-2xl bg-[#0F2D24] text-white border border-[#1E4639] space-y-3">
+            {/* Studio Commitment Card */}
+            <div className="p-6 rounded-2xl bg-[#0F2D24] text-white border border-[#1E4639] space-y-3 shadow-sm">
               <div className="flex items-center gap-2 text-xs font-bold text-[#F5C7CE] uppercase tracking-wider">
                 <Sparkles className="w-4 h-4 text-[#E63952]" />
-                <span>The Laliguras Promise</span>
+                <span>The Laliguras Guarantee</span>
               </div>
               <p className="text-xs text-[#C4D6CD] leading-relaxed">
-                Collaboration, Innovation, Safer Tomorrows. We stand behind our simulations with accredited content and comprehensive enterprise onboarding support.
+                We believe in total transparency. All prospective partnerships receive direct access to our technical architects, structured scopes, and complete intellectual property ownership.
               </p>
             </div>
           </div>
@@ -113,3 +114,4 @@ export default function ContactPage() {
     </div>
   );
 }
+

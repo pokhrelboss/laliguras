@@ -1,3 +1,98 @@
+export type ProjectCategory = 
+  | "Enterprise Platforms" 
+  | "Web Applications" 
+  | "Interactive & 3D" 
+  | "Health & Safety";
+
+export interface CaseStudyMetric {
+  value: string;
+  label: string;
+  context?: string;
+}
+
+export interface ProjectFeature {
+  title: string;
+  description: string;
+  tag?: string;
+  screenshotKey?: string;
+}
+
+export interface Project {
+  id: string;
+  slug: string;
+  title: string;
+  subtitle: string;
+  clientName: string;
+  clientType: "Client Project" | "Studio Innovation" | "Enterprise Partnership";
+  category: ProjectCategory;
+  year: string;
+  summary: string;
+  challenge: string;
+  solution: string;
+  features: ProjectFeature[];
+  technologies: string[];
+  metrics: CaseStudyMetric[];
+  isFeatured: boolean;
+  coverImage?: string;
+  showcaseScreenshots?: {
+    title: string;
+    description: string;
+    imagePath: string;
+    caption: string;
+  }[];
+  ctaText?: string;
+  ctaHref?: string;
+}
+
+export interface Service {
+  id: string;
+  slug: string;
+  title: string;
+  shortDescription: string;
+  fullDescription: string;
+  iconName: string;
+  deliverables: string[];
+  benefits: string[];
+  keyTechnologies: string[];
+}
+
+export interface TeamMember {
+  id: string;
+  name: string;
+  role?: string;
+  bio?: string;
+  initials: string;
+  photoUrl?: string;
+  linkedInUrl?: string;
+  githubUrl?: string;
+}
+
+export interface FAQItem {
+  id: string;
+  question: string;
+  answer: string;
+  category: "Services & Studio" | "SafeStep Platform" | "Engineering & Tech" | "Partnership";
+}
+
+export type DemoInterest = 
+  | "New Digital Product" 
+  | "Enterprise Platform / LMS" 
+  | "SafeStep Platform Demo" 
+  | "Technical Consultation" 
+  | "General Inquiry";
+
+export interface DemoRequestPayload {
+  fullName: string;
+  organization: string;
+  workEmail: string;
+  phoneNumber?: string;
+  interest: DemoInterest;
+  message?: string;
+}
+
+// ==========================================
+// SafeStep Safety Simulation & Course Types
+// ==========================================
 export type CourseCategory = 
   | "Core Safety" 
   | "Compliance" 
@@ -23,38 +118,6 @@ export interface Course {
   learningObjectives: string[];
   targetAudience: string[];
   badgeText?: string;
-}
-
-export interface TeamMember {
-  id: string;
-  name: string;
-  role?: string;
-  bio: string;
-  initials: string;
-  linkedInUrl?: string;
-  specialization?: string;
-}
-
-export interface FAQItem {
-  id: string;
-  question: string;
-  answer: string;
-  category: "General" | "Certification" | "Technology" | "Enterprise";
-}
-
-export type DemoInterest = 
-  | "Request a Demo" 
-  | "Training Partnership" 
-  | "Enterprise Training" 
-  | "General Inquiry";
-
-export interface DemoRequestPayload {
-  fullName: string;
-  organization: string;
-  workEmail: string;
-  phoneNumber?: string;
-  interest: DemoInterest;
-  message?: string;
 }
 
 export interface HazardPoint {
@@ -103,8 +166,8 @@ export interface CertificateRecord {
   learnerName: string;
   courseId: string;
   courseTitle: string;
+  scorePercent: number;
   issueDate: string;
   expiryDate?: string;
   verificationHash: string;
-  scorePercent: number;
 }

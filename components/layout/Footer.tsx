@@ -3,8 +3,7 @@ import Link from "next/link";
 import { LaligurasLogo } from "@/components/ui/LaligurasLogo";
 import { Container } from "@/components/ui/Card";
 import { COMPANY_INFO } from "@/data/company";
-import { COURSES } from "@/data/courses";
-import { Mail, Phone, MapPin, Clock, ShieldCheck } from "lucide-react";
+import { Mail, Phone, MapPin, Clock, Sparkles } from "lucide-react";
 
 export const Footer: React.FC = () => {
   return (
@@ -16,86 +15,94 @@ export const Footer: React.FC = () => {
           <div className="lg:col-span-2 space-y-5">
             <LaligurasLogo variant="dark" size="md" />
             <p className="text-sm text-[#C4D6CD] leading-relaxed max-w-sm">
-              Laliguras transforms workplace safety into an engaging, life-saving habit. 
-              Our SafeStep platform combines 360° hazard simulations, accredited courseware, 
-              and verifiable compliance tracking.
+              Laliguras is a modern digital product engineering and technology studio. 
+              We partner with forward-thinking organizations to design, architect, and scale 
+              mission-critical software, custom enterprise platforms, and interactive 3D simulations.
             </p>
             <div className="flex items-center gap-2 text-xs font-medium text-[#A8BFB5] bg-[#163E32] px-3 py-2 rounded-lg border border-[#215645] max-w-fit">
-              <ShieldCheck className="w-4 h-4 text-[#E63952]" />
-              <span>Rooted in Resilience • Dedicated to Safety</span>
+              <Sparkles className="w-3.5 h-3.5 text-[#E63952]" />
+              <span>Digital Product Studio • Kathmandu & Beyond</span>
             </div>
           </div>
 
-          {/* Column 2: Platform & Ecosystem */}
+          {/* Column 2: Studio & Services */}
           <div className="space-y-4">
             <p className="text-xs font-bold uppercase tracking-wider text-[#A8BFB5]">
-              SafeStep Platform
+              Services
             </p>
             <ul className="space-y-2.5 text-sm text-[#E2ECE7]">
               <li>
-                <Link href="/platform" className="hover:text-white transition-colors">
-                  Overview & Capabilities
+                <Link href="/services#digital-product-engineering" className="hover:text-white transition-colors">
+                  Product Engineering
                 </Link>
               </li>
               <li>
-                <Link href="/platform#interactive-simulation" className="hover:text-white transition-colors">
-                  360° Hazard Scenarios
+                <Link href="/services#enterprise-platforms-lms" className="hover:text-white transition-colors">
+                  Enterprise LMS Platforms
                 </Link>
               </li>
               <li>
-                <Link href="/platform#video-learning" className="hover:text-white transition-colors">
-                  Interactive Video Lessons
+                <Link href="/services#interactive-3d-simulations" className="hover:text-white transition-colors">
+                  360° Spatial Simulations
                 </Link>
               </li>
               <li>
-                <Link href="/platform#assessments" className="hover:text-white transition-colors">
-                  Knowledge Assessments
+                <Link href="/services#ui-ux-design-systems" className="hover:text-white transition-colors">
+                  UI/UX & Design Systems
                 </Link>
               </li>
               <li>
-                <Link href="/platform#certifications" className="hover:text-white transition-colors">
-                  Verifiable Certificates
-                </Link>
-              </li>
-              <li>
-                <Link href="/platform#enterprise" className="hover:text-white transition-colors">
-                  Multi-Tenant White Label
+                <Link href="/services#cloud-devops-security" className="hover:text-white transition-colors">
+                  Cloud & Infrastructure
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Column 3: Core Training Modules */}
+          {/* Column 3: Featured Work & SafeStep */}
           <div className="space-y-4">
             <p className="text-xs font-bold uppercase tracking-wider text-[#A8BFB5]">
-              Training Modules
+              Client Work
             </p>
             <ul className="space-y-2.5 text-sm text-[#E2ECE7]">
-              {COURSES.slice(0, 5).map((course) => (
-                <li key={course.id}>
-                  <Link
-                    href={`/training#${course.slug}`}
-                    className="hover:text-white transition-colors line-clamp-1"
-                  >
-                    {course.title}
-                  </Link>
-                </li>
-              ))}
               <li>
                 <Link
-                  href="/training"
-                  className="text-[#F5C7CE] hover:underline font-medium inline-block text-xs mt-1"
+                  href="/projects/safestep"
+                  className="text-white font-medium hover:text-[#F5C7CE] transition-colors flex items-center gap-1.5"
                 >
-                  View All Modules →
+                  <span>SafeStep Platform</span>
+                  <span className="text-[9px] uppercase px-1.5 py-0.5 rounded-sm bg-[#9E1A2F] text-white">
+                    Featured
+                  </span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/projects#safestep" className="hover:text-white transition-colors">
+                  Health & Safety Case Study
+                </Link>
+              </li>
+              <li>
+                <Link href="/projects" className="hover:text-white transition-colors">
+                  All Client Projects
+                </Link>
+              </li>
+              <li>
+                <Link href="/team" className="hover:text-white transition-colors">
+                  Our Engineering Team
+                </Link>
+              </li>
+              <li>
+                <Link href="/faq" className="hover:text-white transition-colors">
+                  FAQ & Partnership Models
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Column 4: Contact & Operations */}
+          {/* Column 4: Contact & Studio Coordinates */}
           <div className="space-y-4">
             <p className="text-xs font-bold uppercase tracking-wider text-[#A8BFB5]">
-              Contact & Hours
+              Contact & Studio
             </p>
             <ul className="space-y-3 text-sm text-[#E2ECE7]">
               <li className="flex items-start gap-2.5">
@@ -128,9 +135,9 @@ export const Footer: React.FC = () => {
           </div>
         </div>
 
-        {/* Bottom Bar: Copyright, Legal & Configurable Socials */}
+        {/* Bottom Bar: Copyright, Legal & Socials */}
         <div className="py-8 border-t border-[#1E4639] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#A8BFB5]">
-          <p>© 2026 Laliguras. All rights reserved. Built for safer, stronger workplaces.</p>
+          <p>© 2026 Laliguras. All rights reserved. Engineering ambitious digital platforms.</p>
 
           <div className="flex items-center gap-6">
             <Link href="/privacy" className="hover:text-white transition-colors">
@@ -169,3 +176,4 @@ export const Footer: React.FC = () => {
     </footer>
   );
 };
+

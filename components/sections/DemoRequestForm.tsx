@@ -11,7 +11,8 @@ export const DemoRequestForm: React.FC = () => {
   const [organization, setOrganization] = useState("");
   const [workEmail, setWorkEmail] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
-  const [interest, setInterest] = useState<DemoInterest>("Request a Demo");
+  const [interest, setInterest] = useState<DemoInterest>("New Digital Product");
+
   const [message, setMessage] = useState("");
 
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -19,11 +20,13 @@ export const DemoRequestForm: React.FC = () => {
   const [serverError, setServerError] = useState<string | null>(null);
 
   const interestOptions = [
-    { value: "Request a Demo", label: "Request a Demo" },
-    { value: "Training Partnership", label: "Training Partnership" },
-    { value: "Enterprise Training", label: "Enterprise Training" },
-    { value: "General Inquiry", label: "General Inquiry" },
+    { value: "New Digital Product", label: "New Digital Product / Web App" },
+    { value: "Enterprise Platform / LMS", label: "Enterprise Platform / LMS Suite" },
+    { value: "SafeStep Platform Demo", label: "SafeStep Platform Demo & Licensing" },
+    { value: "Technical Consultation", label: "Architecture & Technical Consultation" },
+    { value: "General Inquiry", label: "General Studio Inquiry" },
   ];
+
 
   const validate = () => {
     const newErrors: Record<string, string> = {};
@@ -87,7 +90,8 @@ export const DemoRequestForm: React.FC = () => {
     setOrganization("");
     setWorkEmail("");
     setPhoneNumber("");
-    setInterest("Request a Demo");
+    setInterest("New Digital Product");
+
     setMessage("");
     setErrors({});
     setStatus("idle");
@@ -105,7 +109,7 @@ export const DemoRequestForm: React.FC = () => {
             Demo Request Received!
           </h3>
           <p className="text-sm text-[#3D4F47] max-w-md mx-auto leading-relaxed">
-            Thank you, <strong>{fullName}</strong>. Our safety solutions team has received your inquiry for <strong>{organization}</strong>. We will review your requirements and reach out within 1 business day.
+            Thank you, <strong>{fullName}</strong>. Our technology and engineering team has received your inquiry for <strong>{organization}</strong>. We will review your requirements and reach out within 1 business day.
           </p>
         </div>
         <div className="p-4 bg-[#F8FAF8] rounded-xl border border-[#E1E7E3] text-xs text-[#52665C] max-w-md mx-auto">
@@ -194,8 +198,8 @@ export const DemoRequestForm: React.FC = () => {
         />
 
         <Textarea
-          label="Message or Specific Requirements (Optional)"
-          placeholder="Tell us about your team size, workplace hazards of concern, or training timeline..."
+          label="Message or Project Details (Optional)"
+          placeholder="Tell us about your digital product concept, enterprise platform requirements, or SafeStep demo interest..."
           rows={4}
           value={message}
           onChange={(e) => setMessage(e.target.value)}
@@ -211,9 +215,10 @@ export const DemoRequestForm: React.FC = () => {
             rightIcon={<ArrowRight className="w-4 h-4" />}
             className="w-full justify-center shadow-md"
           >
-            {status === "loading" ? "Submitting Request..." : "Send Request"}
+            {status === "loading" ? "Submitting Inquiry..." : "Submit Project Inquiry"}
           </Button>
         </div>
+
 
         <div className="flex items-center justify-center gap-2 text-[11px] text-[#64766E] pt-2">
           <ShieldCheck className="w-3.5 h-3.5 text-[#0E6245]" />

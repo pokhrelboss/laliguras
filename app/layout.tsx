@@ -20,21 +20,21 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL("https://laliguras.com"),
   title: {
-    default: "Laliguras — Workplace Health, Safety & Professional Training",
-    template: "%s | Laliguras SafeStep",
+    default: "Laliguras — Digital Product Engineering & Technology Studio",
+    template: "%s | Laliguras Studio",
   },
   description:
-    "Laliguras provides modern, interactive workplace health and safety training. Featuring SafeStep with 360° hazard simulations, accredited courseware, and verifiable compliance tracking.",
+    "Laliguras is a modern digital product engineering and technology studio. We design, architect, and build scalable web software, custom enterprise platforms, and interactive 3D simulations.",
   keywords: [
-    "Workplace Health and Safety",
-    "Interactive Safety Training",
-    "SafeStep",
-    "360 Degree Workplace Scenarios",
-    "Manual Handling Training",
-    "Fire Safety Awareness",
-    "COSHH Compliance",
-    "Nepal Occupational Safety",
-    "Enterprise Compliance Training",
+    "Digital Product Studio",
+    "Software Engineering",
+    "Enterprise Platforms",
+    "Web Application Development",
+    "Interactive 3D Simulations",
+    "SafeStep Health and Safety Platform",
+    "Custom Learning Management Systems",
+    "Next.js and React Studio",
+    "Nepal Technology Company",
     "Laliguras",
   ],
   authors: [{ name: "Laliguras" }],
@@ -45,15 +45,15 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://laliguras.com",
     siteName: "Laliguras",
-    title: "Laliguras — Workplace Health, Safety & Professional Training",
+    title: "Laliguras — Digital Product Engineering & Technology Studio",
     description:
-      "Transforming workplace safety through interactive real-world scenarios, 360° simulations, and measurable compliance progress.",
+      "Engineering ambitious digital products, custom enterprise platforms, and interactive 3D simulations.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Laliguras — Modern Workplace Safety Training",
+    title: "Laliguras — Digital Product Engineering & Technology Studio",
     description:
-      "Interactive 360° hazard simulations and verifiable occupational safety credentials for forward-thinking organizations.",
+      "Engineering ambitious digital products, custom enterprise platforms, and interactive 3D simulations.",
   },
   robots: {
     index: true,
@@ -74,10 +74,10 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "Laliguras",
-    alternateName: "SafeStep",
     url: "https://laliguras.com",
     logo: "https://laliguras.com/icon.svg",
-    description: "Modern workplace health, safety, and professional training platform.",
+    description: "Digital product engineering and technology studio building custom software and enterprise platforms.",
+
     address: {
       "@type": "PostalAddress",
       addressLocality: "Lalitpur",

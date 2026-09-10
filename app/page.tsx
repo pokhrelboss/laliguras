@@ -1,21 +1,24 @@
-import { HeroSection } from "@/components/sections/HeroSection";
-import { ValuePropsRibbon } from "@/components/sections/ValuePropsRibbon";
-import { InteractiveHazardPreview } from "@/components/sections/InteractiveHazardPreview";
-import { FeaturedCoursesSection } from "@/components/sections/FeaturedCoursesSection";
-import { HowItWorksSection } from "@/components/sections/HowItWorksSection";
-import { BenefitsSection } from "@/components/sections/BenefitsSection";
-import { CtaBanner } from "@/components/sections/CtaBanner";
+import { StudioHero } from "@/components/sections/StudioHero";
+import { WhatWeDoSection } from "@/components/sections/WhatWeDoSection";
+import { ServicesOverview } from "@/components/sections/ServicesOverview";
+import { FeaturedProjectsSection } from "@/components/sections/FeaturedProjectsSection";
+import { SafeStepFeaturedBanner } from "@/components/sections/SafeStepFeaturedBanner";
+import { WhyLaligurasSection } from "@/components/sections/WhyLaligurasSection";
+import { TeamSection } from "@/components/sections/TeamSection";
+import { StudioCtaBanner } from "@/components/sections/StudioCtaBanner";
 
 export default function HomePage() {
   return (
     <>
-      <HeroSection />
-      <ValuePropsRibbon />
-      <InteractiveHazardPreview />
-      <FeaturedCoursesSection />
-      <HowItWorksSection />
-      <BenefitsSection />
-      <CtaBanner />
+      <StudioHero />
+      <WhatWeDoSection />
+      <ServicesOverview />
+      <FeaturedProjectsSection />
+      <SafeStepFeaturedBanner />
+      <WhyLaligurasSection />
+      <TeamSection />
+      <StudioCtaBanner />
     </>
   );
 }
+

@@ -39,11 +39,16 @@ export async function POST(request: Request) {
     }
 
     const validInterests = [
+      "New Digital Product",
+      "Enterprise Platform / LMS",
+      "SafeStep Platform Demo",
+      "Technical Consultation",
+      "General Inquiry",
       "Request a Demo",
       "Training Partnership",
       "Enterprise Training",
-      "General Inquiry",
     ];
+
 
     if (!interest || !validInterests.includes(interest)) {
       return NextResponse.json(

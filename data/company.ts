@@ -11,46 +11,46 @@ export interface ValueProposition {
 
 export const COMPANY_INFO = {
   name: "Laliguras",
-  platformName: "SafeStep",
-  tagline: "Training for a Safer Tomorrow",
-  headline: "An Integrated Health and Safety Training Platform",
-  mantra: "Learn • Practise • Stay Safe",
-  shortDescription: "Laliguras delivers modern, interactive workplace health and safety training. We replace outdated compliance checklists with immersive 360° scenarios, practical exercises, and measurable safety outcomes.",
+  tagline: "Engineering Ambitious Digital Products & Platforms",
+  headline: "Digital Product Engineering & Technology Studio",
+  subheadline: "We design and build high-quality software, enterprise platforms, and interactive client solutions.",
+  mantra: "Architect • Build • Deliver",
+  shortDescription: "Laliguras is a modern technology and product engineering studio. We partner with forward-thinking organizations to design, engineer, and scale mission-critical digital products, interactive 3D simulations, and enterprise platforms.",
   
-  mission: "To build healthier, safer workplaces through accessible, engaging, and practical training that protects every worker.",
-  vision: "To be a trusted leader in workplace safety, empowering teams with the knowledge, confidence, and habits to prevent accidents before they occur.",
+  mission: "To engineer exceptional digital software and client platforms that combine architectural precision, human-centered design, and lasting impact.",
+  vision: "To be recognized as a premier digital product studio from South Asia, known globally for engineering resilience, craft, and client-centric innovation.",
   
   values: [
     {
-      title: "People First",
-      description: "Human well-being, dignity, and physical protection guide every decision we make and every module we design.",
+      title: "Engineering Rigor",
+      description: "We architect resilient, clean, and scalable systems built for longevity—prioritizing performance, maintainability, and security.",
     },
     {
-      title: "Integrity",
-      description: "We provide truthful, scientifically grounded, and strictly compliant safety education that organizations can rely upon.",
+      title: "Human-Centered Craft",
+      description: "Technology must serve people. Every interface, interaction, and workflow we design is rooted in ergonomic clarity and user empathy.",
     },
     {
-      title: "Innovation",
-      description: "We replace passive slide decks with immersive 360° workplace hazard simulations and active decision-making.",
+      title: "Himalayan Resilience",
+      description: "Inspired by the Laligurans flower thriving in alpine altitudes, we bring relentless persistence, resourcefulness, and grit to tough technical challenges.",
     },
     {
-      title: "Collaboration",
-      description: "We partner closely with employers, frontline workers, and safety professionals to solve real-world workplace risks.",
+      title: "Transparent Partnership",
+      description: "No black boxes, no tech jargon. We act as an embedded engineering ally with open communication, clear milestones, and complete IP ownership for clients.",
     },
     {
-      title: "Continuous Improvement",
-      description: "Safety is not static. We continuously update content, improve simulations, and adapt to evolving industrial standards.",
+      title: "Continuous Innovation",
+      description: "From 360° spatial simulations to modern reactive architectures, we continuously push the boundaries of what web technology can achieve.",
     },
     {
-      title: "Safety",
-      description: "Proactive prevention is our core creed. We build a safety-first mindset that workers carry throughout their careers.",
+      title: "Measurable Impact",
+      description: "We measure success by real business outcomes, operational efficiencies, and tangible user satisfaction, not vanity metrics.",
     },
   ] as CompanyValue[],
 
-  story: "Laliguras takes its name from Nepal's national flower—the Laligurans (Rhododendron)—a symbol of enduring resilience, natural beauty, and strength across challenging mountain terrain. We began with a straightforward conviction: workplace safety training has been broken for decades. Too often treated as a mindless box-ticking exercise, traditional training leaves employees unprepared when real hazards arise. Laliguras was founded to change this. By pairing accredited occupational health standards with interactive technology, we enable workers to identify hazards before they cause harm.",
+  story: "Laliguras takes its name from Nepal's national flower—the Laligurans (Rhododendron)—a symbol of enduring resilience, natural beauty, and quiet strength across challenging mountain terrain. Founded as a modern technology and product development studio, we set out to prove that world-class software engineering and human-centered design can flourish from Kathmandu to the world. We partner with enterprises, startups, and institutions to turn ambitious concepts into reliable, production-grade digital platforms—such as SafeStep, our flagship client health and safety training suite.",
 
   quote: {
-    text: "Inspired by the strength of the Laligurans, we build safer workplaces for a brighter tomorrow.",
+    text: "Inspired by the strength of the Laligurans, we build enduring digital products that move industries forward.",
     author: "Team Laliguras",
   },
 
@@ -58,14 +58,50 @@ export const COMPANY_INFO = {
     email: "info@laliguras.com",
     phone: "+977 9801234567",
     location: "Lalitpur, Nepal",
-    hours: "Monday – Friday, 9:00 AM – 5:00 PM",
+    hours: "Monday – Friday, 9:00 AM – 6:00 PM (NPT)",
   },
+
+  studioStats: [
+    { value: "100%", label: "Client Satisfaction" },
+    { value: "6+", label: "Product Engineers & Designers" },
+    { value: "Enterprise", label: "Architecture Grade" },
+    { value: "360°", label: "Spatial & Interactive Capabilities" },
+  ],
+
+  howWeWork: [
+    {
+      step: "01",
+      title: "Discovery & Strategy",
+      description: "We deep-dive into your operational challenges, stakeholder needs, and system requirements to draft a precise technical roadmap.",
+    },
+    {
+      step: "02",
+      title: "System Architecture",
+      description: "We design robust data models, API schemas, security postures, and scalable cloud topologies before writing production code.",
+    },
+    {
+      step: "03",
+      title: "UI/UX & Interactive Prototyping",
+      description: "Our design team crafts intuitive user journeys, high-fidelity design systems, and responsive, accessible interfaces.",
+    },
+    {
+      step: "04",
+      title: "Agile Engineering",
+      description: "Full-stack development with modern frameworks, clean TypeScript, rigorous automated testing, and bi-weekly sprint reviews.",
+    },
+    {
+      step: "05",
+      title: "Deployment & Scale",
+      description: "Zero-downtime CI/CD pipelines, production monitoring, documentation handover, and ongoing platform evolution.",
+    },
+  ],
+
 
   valueProps: [
     {
       shortLabel: "Engaging Learning",
       title: "Engaging Learning",
-      description: "Interactive bite-sized video lessons that keep learners focused, resulting in significantly higher retention than traditional paper manuals.",
+      description: "Interactive bite-sized video lessons that keep learners focused, resulting in significantly higher retention.",
     },
     {
       shortLabel: "Real-World Scenarios",
@@ -75,7 +111,7 @@ export const COMPANY_INFO = {
     {
       shortLabel: "Practical Knowledge",
       title: "Practical Knowledge",
-      description: "Immediate, actionable safety behaviors and posture techniques that employees carry directly onto the warehouse and office floor.",
+      description: "Immediate, actionable safety behaviors and posture techniques that employees carry directly onto the floor.",
     },
     {
       shortLabel: "Measurable Progress",
@@ -144,3 +180,5 @@ export const COMPANY_INFO = {
     },
   ],
 };
+
+
