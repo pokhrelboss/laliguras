@@ -137,7 +137,7 @@
 - [x] Replace the in-memory inquiry store and public submission listing with a fail-closed server webhook integration
 - [x] Verify contact validation and truthful unavailable-state behavior without a configured webhook
 - [x] Verify mobile navigation, FAQ filtering, course filtering and syllabus, and the SafeStep hazard interaction in a real production browser
-- [x] Verify all 13 public/fallback routes at 390 px and 768 px: one H1, zero missing images, zero empty links, and zero horizontal overflow
+- [x] Verify all 13 public/fallback routes at 320 px, 390 px, 768 px, and 1920 px: one H1, zero missing images, zero empty links, and zero horizontal overflow
 - [x] Verify primary pages visually at 1440 px and review the complete revealed homepage from hero through footer
 - [x] Run `npm run lint` — zero warnings and errors
 - [x] Run `npx tsc --noEmit` — zero diagnostics
