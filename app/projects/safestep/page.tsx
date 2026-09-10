@@ -43,7 +43,7 @@ export default function SafeStepProjectPage() {
           <ScrollReveal direction="up" duration={900}>
             <div className="safe-frame overflow-hidden rounded-[1.25rem] border border-white/10 bg-[#071713] p-2.5 sm:rounded-[1.8rem] sm:p-4">
               <div className="mb-3 flex items-center justify-between px-2 py-1 text-[9px] font-semibold uppercase tracking-[0.16em] text-white/45"><span>SafeStep product system</span><span className="hidden sm:block">Designed by Laliguras</span></div>
-              <Image src="/reference/prototype-reference.png" alt="SafeStep marketing, dashboard, module, scenario, assessment, certificate, profile, and help interfaces" width={3072} height={1536} priority sizes="100vw" className="h-auto w-full rounded-xl" />
+              <Image src="/reference/prototype-reference.png" alt="SafeStep marketing, dashboard, module, scenario, assessment, certificate, profile, and help interfaces" width={3072} height={1536} priority unoptimized sizes="100vw" className="h-auto w-full rounded-xl" />
             </div>
           </ScrollReveal>
         </Container>

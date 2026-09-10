@@ -51,7 +51,7 @@ export default function ProjectsPage() {
             <ScrollReveal direction="left" delay={100}>
               <div className="safe-frame overflow-hidden rounded-[1.3rem] bg-[#071713] p-3 sm:p-4">
                 <div className="mb-3 flex items-center justify-between px-2 text-[9px] font-semibold uppercase tracking-[0.15em] text-white/45"><span>SafeStep · interface system</span><span className="hidden sm:inline">Laliguras product project</span></div>
-                <Image src="/reference/prototype-reference.png" alt="Overview of the SafeStep website and learner product interfaces" width={3072} height={1536} priority sizes="(max-width: 1024px) 100vw, 65vw" className="h-auto w-full rounded-xl" />
+                <Image src="/reference/prototype-reference.png" alt="Overview of the SafeStep website and learner product interfaces" width={3072} height={1536} priority unoptimized sizes="(max-width: 1024px) 100vw, 65vw" className="h-auto w-full rounded-xl" />
               </div>
               <div className="mt-10 grid gap-8 border-y border-black/15 py-8 sm:grid-cols-2">
                 <div><p className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#9b1730]">The question</p><p className="mt-3 text-sm leading-7 text-[#596861]">How might a single platform connect learning, practice, assessment, and evidence without overwhelming the learner?</p></div>

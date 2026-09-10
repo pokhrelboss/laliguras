@@ -31,7 +31,7 @@ export default function AboutPage() {
             </ScrollReveal>
             <ScrollReveal direction="left" delay={100}>
               <figure>
-                <div className="relative aspect-[16/8] overflow-hidden bg-[#102a22]"><Image src="/brand/laliguras-himalaya-hero.webp" alt="Himalayan ridges and red Laliguras rhododendrons at dawn" fill sizes="(max-width: 1024px) 100vw, 60vw" className="object-cover object-center" /></div>
+                <div className="relative aspect-[16/8] overflow-hidden bg-[#102a22]"><Image src="/brand/laliguras-himalaya-hero.webp" alt="Himalayan ridges and red Laliguras rhododendrons at dawn" fill unoptimized sizes="(max-width: 1024px) 100vw, 60vw" className="object-cover object-center" /></div>
                 <figcaption className="mt-3 flex justify-between text-[10px] font-semibold uppercase tracking-[0.16em] text-[#77827d]"><span>Himalayan resilience</span><span>Nepal</span></figcaption>
               </figure>
               <p className="mt-12 max-w-3xl text-balance text-3xl font-semibold leading-[1.15] tracking-[-0.04em] text-[#101916] sm:text-5xl">That combination of endurance and quiet beauty is more than a visual motif. It is the standard we want our work to carry.</p>

@@ -62,7 +62,7 @@ export const FeaturedProjectsSection: React.FC = () => (
                 <span className="flex items-center gap-2"><i className="h-1.5 w-1.5 rounded-full bg-[#d72b4b]" /> SafeStep product system</span>
                 <span className="hidden sm:inline">Overview · Learner · Scenarios · Certificates</span>
               </div>
-              <Image src="/reference/prototype-reference.png" alt="SafeStep interface overview showing the marketing site, learner dashboard, training module, hazard scenario, assessment, certificate, profile, and help screens" width={3072} height={1536} sizes="(max-width: 1024px) 100vw, 70vw" className="h-auto w-full rounded-[0.7rem] bg-white" />
+              <Image src="/reference/prototype-reference.png" alt="SafeStep interface overview showing the marketing site, learner dashboard, training module, hazard scenario, assessment, certificate, profile, and help screens" width={3072} height={1536} unoptimized sizes="(max-width: 1024px) 100vw, 70vw" className="h-auto w-full rounded-[0.7rem] bg-white" />
             </div>
           </ScrollReveal>
 

@@ -38,13 +38,14 @@ export const LaligurasLogo: React.FC<LaligurasLogoProps> = ({
 
   if (layout === "stacked") {
     innerContent = (
-      <div className={cn("inline-flex flex-col items-center gap-1.5 select-none group", className)}>
+      <div className={cn("inline-flex shrink-0 flex-col items-center gap-1.5 select-none group", className)}>
         <Image
           src="/logo/laliguras-trimmed.png"
           alt="Laliguras"
           width={currentMark.height * 1.2}
           height={currentMark.height * 1.2}
           priority={priority}
+          unoptimized
           className="h-auto w-auto max-h-[80px] object-contain transition-transform duration-300 group-hover:scale-[1.03]"
         />
         {subtitle && (
@@ -61,41 +62,44 @@ export const LaligurasLogo: React.FC<LaligurasLogoProps> = ({
     );
   } else if (layout === "mark") {
     innerContent = (
-      <div className={cn("inline-flex items-center select-none group", className)}>
+      <div className={cn("inline-flex shrink-0 items-center select-none group", className)}>
         <Image
           src="/logo/laliguras-mark.png"
           alt="Laliguras"
           width={currentMark.width}
           height={currentMark.height}
           priority={priority}
+          unoptimized
           className="h-auto w-auto object-contain transition-transform duration-300 group-hover:scale-[1.03]"
         />
       </div>
     );
   } else if (layout === "original") {
     innerContent = (
-      <div className={cn("inline-flex items-center select-none group", className)}>
+      <div className={cn("inline-flex shrink-0 items-center select-none group", className)}>
         <Image
           src="/logo/laliguras.png"
           alt="Laliguras"
           width={180}
           height={120}
           priority={priority}
+          unoptimized
           className="h-auto w-auto max-h-[70px] object-contain"
         />
       </div>
     );
   } else {
     innerContent = (
-      <div className={cn("inline-flex flex-col select-none transition-transform duration-300 hover:scale-[1.015]", className)}>
+      <div className={cn("inline-flex shrink-0 flex-col select-none transition-transform duration-300 hover:scale-[1.015]", className)}>
         <Image
           src={isDark ? "/logo/laliguras-horizontal-light.png" : "/logo/laliguras-horizontal.png"}
           alt="Laliguras"
           width={848}
           height={259}
           priority={priority}
+          unoptimized
           className={cn(
-            "w-auto object-contain",
+            "w-auto max-w-none object-contain",
             size === "sm" && "h-9 sm:h-10",
             size === "md" && "h-11 sm:h-12",
             size === "lg" && "h-14 sm:h-16",
