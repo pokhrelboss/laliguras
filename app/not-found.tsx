@@ -42,7 +42,7 @@ export default function NotFound() {
 
         <div className="pt-6 border-t border-[#E1E7E3] text-xs text-[#64766E] flex items-center justify-center gap-2">
           <Mail className="w-3.5 h-3.5" />
-          <span>Need assistance? Contact our team at info@laliguras.com</span>
+          <span>Need assistance? Contact our team at team@pokhrel.tech</span>
         </div>
       </Container>
     </div>

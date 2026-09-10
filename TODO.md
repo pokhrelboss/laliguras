@@ -94,7 +94,7 @@
   - [x] Full Name, Company, Work Email, Phone, Interest dropdown, Message
 - [x] Next.js Server API route `/api/demo-request` with data validation & error handling
 - [x] Interactive UI states: Idle, Loading spinner, Success message with next steps, Error alert
-- [x] Office details, contact email (`info@laliguras.com`), phone, location
+- [x] Office details, contact email (`team@pokhrel.tech`), location (`Chitwan, Nepal`)
 
 ## Phase 11: FAQ Page (`/faq`)
 - [x] Accessible accordion component for 8 core safety training questions
@@ -134,8 +134,8 @@
 - [x] Redesign About, Services, Projects, SafeStep case study, Team, Contact, Training, Platform, and FAQ presentation
 - [x] Keep all six supplied team names exactly, including **Aayush Nepaune**, and remove invented biographies, roles, and placeholder social links
 - [x] Remove unverified portfolio projects, performance metrics, accreditation language, fake social URLs, and the placeholder phone number
-- [x] Replace the in-memory inquiry store and public submission listing with a fail-closed server webhook integration
-- [x] Verify contact validation and truthful unavailable-state behavior without a configured webhook
+- [x] Replace the in-memory inquiry store and public submission listing with fail-closed server-side Resend delivery
+- [x] Verify contact validation and truthful unavailable-state behavior without a configured `RESEND_API_KEY`
 - [x] Verify mobile navigation, FAQ filtering, course filtering and syllabus, and the SafeStep hazard interaction in a real production browser
 - [x] Verify all 13 public/fallback routes at 320 px, 390 px, 768 px, and 1920 px: one H1, zero missing images, zero empty links, and zero horizontal overflow
 - [x] Verify primary pages visually at 1440 px and review the complete revealed homepage from hero through footer

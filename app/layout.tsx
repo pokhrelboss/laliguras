@@ -81,13 +81,13 @@ export default function RootLayout({
 
     address: {
       "@type": "PostalAddress",
-      addressLocality: "Lalitpur",
+      addressLocality: "Chitwan",
       addressCountry: "NP",
     },
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "customer service",
-      email: "info@laliguras.com",
+      email: "team@pokhrel.tech",
     },
   };
 

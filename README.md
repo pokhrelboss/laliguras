@@ -103,6 +103,18 @@ npm run build
 npm run start
 ```
 
+### Contact Email Delivery
+
+The `/api/demo-request` route sends contact and Request Demo submissions through Resend from the server only. It always sends from and to `team@pokhrel.tech`, and sets the visitor's submitted email as `reply_to`.
+
+Set the server-only variable in Netlify (and in a local `.env.local` when testing):
+
+```bash
+RESEND_API_KEY=re_xxxxxxxxx
+```
+
+Before enabling delivery, add and verify `pokhrel.tech` in Resend. In Cloudflare DNS, add the exact records Resend shows for that domain: the SPF TXT record, the `send` MX feedback/return-path record, and the generated DKIM record(s) (usually CNAME; use the type and value shown in your Resend dashboard). Add a tracking CNAME only if you enable tracking, and add DMARC separately at `_dmarc` if you want that additional policy. Keep mail-related DNS records unproxied in Cloudflare. Do not commit the API key or expose it in client-side code.
+
 ### Code Quality & Validation
 ```bash
 # Run linting

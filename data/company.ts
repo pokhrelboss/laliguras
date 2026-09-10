@@ -55,8 +55,8 @@ export const COMPANY_INFO = {
   },
 
   contact: {
-    email: "info@laliguras.com",
-    location: "Lalitpur, Nepal",
+    email: "team@pokhrel.tech",
+    location: "Chitwan, Nepal",
     hours: "Monday – Friday, 9:00 AM – 6:00 PM (NPT)",
   },
 
@@ -172,4 +172,3 @@ export const COMPANY_INFO = {
     },
   ],
 };
-

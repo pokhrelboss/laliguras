@@ -141,7 +141,7 @@ export const DemoRequestForm: React.FC = () => {
           <div>
             <p className="font-semibold">Submission Error</p>
             <p>{serverError}</p>
-            <a href="mailto:info@laliguras.com" className="mt-2 inline-block font-semibold underline underline-offset-2">Email Laliguras instead</a>
+            <a href="mailto:team@pokhrel.tech" className="mt-2 inline-block font-semibold underline underline-offset-2">Email Laliguras instead</a>
           </div>
         </div>
       )}
@@ -223,7 +223,7 @@ export const DemoRequestForm: React.FC = () => {
 
         <div className="flex items-center justify-center gap-2 text-[11px] text-[#64766E] pt-2">
           <ShieldCheck className="w-3.5 h-3.5 text-[#0E6245]" />
-          <span>Your details are sent only to the configured Laliguras inquiry service.</span>
+          <span>Your details are sent only through Laliguras&apos; configured Resend email service.</span>
         </div>
       </form>
     </div>

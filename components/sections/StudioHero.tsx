@@ -77,7 +77,7 @@ export const StudioHero: React.FC = () => {
         </div>
 
         <div className="hero-rise mt-12 flex items-end justify-between border-t border-white/18 pt-5 text-[10px] font-semibold uppercase tracking-[0.18em] text-white/55" style={{ animationDelay: "470ms" }}>
-          <span>Lalitpur · Nepal</span>
+          <span>Chitwan · Nepal</span>
           <Link href="#studio-intro" className="hidden items-center gap-2 transition-colors hover:text-white sm:inline-flex">
             Discover Laliguras <ArrowDown className="h-3.5 w-3.5" strokeWidth={1.75} />
           </Link>

@@ -29,7 +29,7 @@ export default function ContactPage() {
                   <a href={`mailto:${COMPANY_INFO.contact.email}`} className="flex items-center gap-3 py-2 text-sm font-semibold text-[#101916] transition-colors hover:text-[#9b1730]"><Mail className="h-4 w-4 text-[#9b1730]" strokeWidth={1.75} />{COMPANY_INFO.contact.email}</a>
                   <p className="flex items-center gap-3 py-2 text-sm text-[#52635b]"><MapPin className="h-4 w-4 text-[#9b1730]" strokeWidth={1.75} />{COMPANY_INFO.contact.location}</p>
                 </div>
-                <p className="mt-7 text-xs leading-6 text-[#77827d]">The online form only confirms delivery when a live server-side inquiry webhook is configured. If it is unavailable, please use the email address above.</p>
+                <p className="mt-7 text-xs leading-6 text-[#77827d]">The online form confirms delivery only when the server-side Resend email service is configured. If it is unavailable, please use the email address above.</p>
               </div>
             </ScrollReveal>
             <div id="demo-form"><ScrollReveal direction="left" delay={100}><DemoRequestForm /></ScrollReveal></div>

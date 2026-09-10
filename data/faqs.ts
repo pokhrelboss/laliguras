@@ -46,7 +46,7 @@ export const FAQS: FAQItem[] = [
   {
     id: "faq-8",
     question: "How do we get started with Laliguras?",
-    answer: "Use the Contact page or email info@laliguras.com with a short note about the problem, the people affected, and the outcome you are seeking. The online form will only claim success when its server-side delivery integration is configured and accepts the request.",
+    answer: "Use the Contact page or email team@pokhrel.tech with a short note about the problem, the people affected, and the outcome you are seeking. The online form confirms success only after the server-side Resend delivery is accepted.",
     category: "Services & Studio",
   },
 ];

@@ -58,8 +58,8 @@ export default function TermsPage() {
             <h2 className="text-lg font-bold text-[#0A1914]">5. Inquiries</h2>
             <p>
               For legal notices or questions regarding service agreements, contact us at{" "}
-              <a href="mailto:info@laliguras.com" className="text-[#9E1A2F] underline font-medium">
-                info@laliguras.com
+              <a href="mailto:team@pokhrel.tech" className="text-[#9E1A2F] underline font-medium">
+                team@pokhrel.tech
               </a>.
             </p>
           </section>

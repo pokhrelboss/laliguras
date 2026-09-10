@@ -35,7 +35,7 @@ export const CtaBanner: React.FC = () => {
               Request a Live Demo
             </Button>
             <Button
-              href="mailto:info@laliguras.com"
+              href="mailto:team@pokhrel.tech"
               variant="outline"
               size="lg"
               leftIcon={<Mail className="w-4 h-4" />}

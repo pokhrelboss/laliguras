@@ -69,8 +69,8 @@ export default function PrivacyPage() {
             <h2 className="text-lg font-bold text-[#0A1914]">5. Contact Us</h2>
             <p>
               For questions regarding our privacy practices or data rights, please contact our compliance officer at{" "}
-              <a href="mailto:info@laliguras.com" className="text-[#9E1A2F] underline font-medium">
-                info@laliguras.com
+              <a href="mailto:team@pokhrel.tech" className="text-[#9E1A2F] underline font-medium">
+                team@pokhrel.tech
               </a>.
             </p>
           </section>
