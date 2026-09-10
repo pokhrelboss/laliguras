@@ -47,7 +47,7 @@ export const COMPANY_INFO = {
     },
   ] as CompanyValue[],
 
-  story: "Laliguras takes its name from Nepal's national flower—the Laligurans (Rhododendron)—a symbol of enduring resilience, natural beauty, and quiet strength across challenging mountain terrain. Founded as a modern technology and product development studio, we set out to prove that world-class software engineering and human-centered design can flourish from Kathmandu to the world. We partner with enterprises, startups, and institutions to turn ambitious concepts into reliable, production-grade digital platforms—such as SafeStep, our flagship client health and safety training suite.",
+  story: "Laliguras takes its name from Nepal's national flower—the Laligurans (Rhododendron)—a symbol of enduring resilience, natural beauty, and quiet strength across challenging mountain terrain. Founded as a modern technology and product development studio, we set out to prove that world-class software engineering and human-centered design can flourish from Chitwan to the world. We partner with enterprises, startups, and institutions to turn ambitious concepts into reliable, production-grade digital platforms—such as SafeStep, our flagship client health and safety training suite.",
 
   quote: {
     text: "Inspired by the strength of the Laligurans, we build enduring digital products that move industries forward.",
