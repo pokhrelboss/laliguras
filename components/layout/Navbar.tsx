@@ -58,7 +58,7 @@ export const Navbar: React.FC = () => {
         <div className="flex h-16 sm:h-20 items-center justify-between gap-4">
           {/* Brand Logo */}
           <div className="flex shrink-0 items-center">
-            <LaligurasLogo size="md" />
+            <LaligurasLogo size="md" priority />
           </div>
 
           {/* Desktop Navigation Links */}
