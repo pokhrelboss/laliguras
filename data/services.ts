@@ -55,8 +55,8 @@ export const SERVICES: Service[] = [
       "Cross-device Touch & Mobile Optimization",
     ],
     benefits: [
-      "4x higher retention compared to passive reading",
-      "Measurable practical competence before physical deployment",
+      "Active practice instead of passive reading",
+      "A visible record of scenario decisions and feedback",
       "Runs natively in any standard web browser without plugins",
     ],
     keyTechnologies: ["WebGL", "Canvas API", "CSS 3D Transforms", "SVG Vector Engines", "React"],
@@ -95,7 +95,7 @@ export const SERVICES: Service[] = [
       "Performance Monitoring & Error Tracking",
     ],
     benefits: [
-      "99.99% operational uptime and lightning-fast load times",
+      "Infrastructure shaped around the product's availability requirements",
       "Strict data privacy, encryption at rest and in transit",
       "Reduced cloud hosting costs through optimized architecture",
     ],

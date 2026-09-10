@@ -14,6 +14,7 @@ import {
   ShieldAlert,
   Info,
   ArrowRight,
+  Lightbulb,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -240,8 +241,8 @@ export const InteractiveHazardPreview: React.FC = () => {
 
             {/* Instruction Footer */}
             <div className="mt-4 flex flex-col sm:flex-row items-center justify-between text-xs text-[#A8BFB5] gap-2">
-              <p>💡 Click any numbered target pin to inspect potential workplace risks.</p>
-              <p className="font-mono">Engine: SafeStep WebXR Simulation v1.4</p>
+              <p className="inline-flex items-center gap-1.5"><Lightbulb className="h-3.5 w-3.5" strokeWidth={1.75} /> Click any numbered target pin to inspect potential workplace risks.</p>
+              <p className="font-mono">Interactive SafeStep scenario preview</p>
             </div>
           </div>
 
@@ -323,14 +324,14 @@ export const InteractiveHazardPreview: React.FC = () => {
               )}
             </Card>
 
-            {/* Quick stats mini card */}
+            {/* Learning approach note */}
             <div className="p-4 rounded-xl border border-[#E1E7E3] bg-white flex items-center justify-between">
               <div>
-                <p className="text-xs text-[#52665C] font-medium">SafeStep Retention</p>
-                <p className="text-lg font-bold text-[#0F2D24]">Up to 4x Higher</p>
+                <p className="text-xs text-[#52665C] font-medium">Learning approach</p>
+                <p className="text-lg font-bold text-[#0F2D24]">Active practice</p>
               </div>
               <span className="text-xs text-[#3D4F47] max-w-[140px] text-right">
-                Compared to passive slide-based training.
+                Explore, identify, and receive direct feedback.
               </span>
             </div>
           </div>

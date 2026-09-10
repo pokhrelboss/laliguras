@@ -1,96 +1,66 @@
 import { NextResponse } from "next/server";
 import { DemoRequestPayload } from "@/types";
 
-// In-memory submissions store for Phase 1 (extensible for database insertion in Phase 2)
-export const demoSubmissions: (DemoRequestPayload & {
-  id: string;
-  submittedAt: string;
-  status: "pending" | "reviewed" | "contacted";
-})[] = [];
+const VALID_INTERESTS = new Set([
+  "New Digital Product",
+  "Enterprise Platform / LMS",
+  "SafeStep Platform Demo",
+  "Technical Consultation",
+  "General Inquiry",
+]);
 
 export async function POST(request: Request) {
   try {
-    const body = await request.json();
+    const body = (await request.json()) as Partial<DemoRequestPayload>;
+    const fullName = typeof body.fullName === "string" ? body.fullName.trim() : "";
+    const organization = typeof body.organization === "string" ? body.organization.trim() : "";
+    const workEmail = typeof body.workEmail === "string" ? body.workEmail.trim().toLowerCase() : "";
+    const phoneNumber = typeof body.phoneNumber === "string" ? body.phoneNumber.trim() : "";
+    const message = typeof body.message === "string" ? body.message.trim() : "";
 
-    const { fullName, organization, workEmail, phoneNumber, interest, message } =
-      body as Partial<DemoRequestPayload>;
+    if (fullName.length < 2) return NextResponse.json({ error: "Please provide your full name." }, { status: 400 });
+    if (organization.length < 2) return NextResponse.json({ error: "Please provide your organization." }, { status: 400 });
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(workEmail)) return NextResponse.json({ error: "Please provide a valid work email." }, { status: 400 });
+    if (!body.interest || !VALID_INTERESTS.has(body.interest)) return NextResponse.json({ error: "Please select a valid area of interest." }, { status: 400 });
 
-    // Server-side validations
-    if (!fullName || typeof fullName !== "string" || fullName.trim().length < 2) {
-      return NextResponse.json(
-        { error: "Full Name is required (minimum 2 characters)." },
-        { status: 400 }
-      );
+    const webhookUrl = process.env.DEMO_REQUEST_WEBHOOK_URL;
+    if (!webhookUrl) {
+      return NextResponse.json({ error: "Online inquiries are not configured yet. Please email info@laliguras.com directly." }, { status: 503 });
     }
 
-    if (!organization || typeof organization !== "string" || organization.trim().length < 2) {
-      return NextResponse.json(
-        { error: "Organization or Company name is required." },
-        { status: 400 }
-      );
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 8_000);
+    let delivery: Response;
+    try {
+      delivery = await fetch(webhookUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          ...(process.env.DEMO_REQUEST_WEBHOOK_SECRET ? { Authorization: `Bearer ${process.env.DEMO_REQUEST_WEBHOOK_SECRET}` } : {}),
+        },
+        body: JSON.stringify({
+          id: crypto.randomUUID(),
+          fullName,
+          organization,
+          workEmail,
+          phoneNumber: phoneNumber || undefined,
+          interest: body.interest,
+          message: message || undefined,
+          submittedAt: new Date().toISOString(),
+        }),
+        cache: "no-store",
+        signal: controller.signal,
+      });
+    } finally {
+      clearTimeout(timeout);
     }
 
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!workEmail || !emailRegex.test(workEmail)) {
-      return NextResponse.json(
-        { error: "A valid business email address is required." },
-        { status: 400 }
-      );
+    if (!delivery.ok) {
+      return NextResponse.json({ error: "We could not deliver your inquiry. Please email info@laliguras.com directly." }, { status: 502 });
     }
 
-    const validInterests = [
-      "New Digital Product",
-      "Enterprise Platform / LMS",
-      "SafeStep Platform Demo",
-      "Technical Consultation",
-      "General Inquiry",
-      "Request a Demo",
-      "Training Partnership",
-      "Enterprise Training",
-    ];
-
-
-    if (!interest || !validInterests.includes(interest)) {
-      return NextResponse.json(
-        { error: "Please select a valid area of interest." },
-        { status: 400 }
-      );
-    }
-
-    const newSubmission = {
-      id: `demo-${Date.now()}-${Math.random().toString(36).substring(2, 7)}`,
-      fullName: fullName.trim(),
-      organization: organization.trim(),
-      workEmail: workEmail.toLowerCase().trim(),
-      phoneNumber: phoneNumber ? String(phoneNumber).trim() : undefined,
-      interest,
-      message: message ? String(message).trim() : undefined,
-      submittedAt: new Date().toISOString(),
-      status: "pending" as const,
-    };
-
-    demoSubmissions.push(newSubmission);
-
-    return NextResponse.json(
-      {
-        success: true,
-        message: "Your request has been successfully submitted.",
-        submissionId: newSubmission.id,
-      },
-      { status: 201 }
-    );
+    return NextResponse.json({ success: true, message: "Your inquiry was delivered to Laliguras." }, { status: 201 });
   } catch {
-    return NextResponse.json(
-      { error: "An unexpected error occurred while processing your request." },
-      { status: 500 }
-    );
+    return NextResponse.json({ error: "We could not process your inquiry. Please email info@laliguras.com directly." }, { status: 500 });
   }
-}
-
-// GET endpoint allowing admin review of demo submissions
-export async function GET() {
-  return NextResponse.json({
-    total: demoSubmissions.length,
-    submissions: demoSubmissions,
-  });
 }

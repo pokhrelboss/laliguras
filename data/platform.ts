@@ -66,7 +66,7 @@ export const PLATFORM_CAPABILITIES: PlatformCapability[] = [
     id: "certificates",
     title: "Verifiable Digital Certificates",
     subtitle: "Tamper-evident credentials with QR verification",
-    description: "Every passing learner automatically receives a cryptographic certificate featuring a unique identification hash and instant QR verification for safety audits.",
+    description: "A dedicated completion and certificate record gives learners a clear result to retain after finishing a module.",
     iconName: "FileCheck",
     badge: "Audit-Ready",
   },

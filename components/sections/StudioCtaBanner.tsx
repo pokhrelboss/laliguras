@@ -1,68 +1,33 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 import { Container } from "@/components/ui/Card";
-import { Button } from "@/components/ui/Button";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
-import { ArrowRight, Sparkles, Mail } from "lucide-react";
 
-export const StudioCtaBanner: React.FC = () => {
-  return (
-    <section className="py-20 md:py-28 bg-[#F8FAF8] relative overflow-hidden">
-      <Container size="xl">
-        <ScrollReveal direction="up" duration={700}>
-          <div className="rounded-3xl bg-[#0A1914] text-white p-8 sm:p-12 lg:p-16 relative overflow-hidden shadow-2xl border border-[#1E4639]">
-            
-            {/* Ambient Background Gradient */}
-            <div className="absolute top-0 right-0 w-96 h-96 bg-radial from-[#9E1A2F]/30 to-transparent rounded-full blur-3xl pointer-events-none" />
-            <div className="absolute -bottom-10 -left-10 w-96 h-96 bg-radial from-[#163E32] to-transparent rounded-full blur-3xl pointer-events-none" />
-
-            <div className="relative z-10 max-w-3xl space-y-6">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#163E32] border border-[#215645] text-xs font-semibold text-[#F5C7CE]">
-                <Sparkles className="w-3.5 h-3.5 text-[#E63952]" />
-                <span>Let&apos;s Build Something Ambitious</span>
-              </div>
-
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white leading-[1.15]">
-                Have a mission-critical platform to build? Let&apos;s architect it together.
-              </h2>
-
-              <p className="text-base sm:text-lg text-[#C4D6CD] leading-relaxed max-w-2xl">
-                From specialized enterprise solutions like SafeStep to full-scale web products, we bring engineering precision, design elegance, and complete client ownership to your vision.
-              </p>
-
-              <div className="pt-2 flex flex-wrap items-center gap-4">
-                <Button
-                  href="/contact"
-                  variant="primary"
-                  size="lg"
-                  rightIcon={<ArrowRight className="w-4 h-4" />}
-                >
-                  Start a Project Consultation
-                </Button>
-                <Button
-                  href="/projects/safestep"
-                  variant="outline"
-                  size="lg"
-                  className="bg-[#163E32] border-[#215645] text-white hover:bg-[#1E4639]"
-                >
-                  Explore SafeStep Case Study
-                </Button>
-              </div>
-
-              <div className="pt-6 border-t border-[#1E4639] flex flex-wrap items-center gap-6 text-xs text-[#A8BFB5]">
-                <span className="flex items-center gap-1.5">
-                  <Mail className="w-3.5 h-3.5 text-[#E63952]" />
-                  Direct response within 24 hours: info@laliguras.com
-                </span>
-                <span>•</span>
-                <span>Fixed-scope or sprint-based partnerships</span>
-              </div>
-            </div>
-
+export const StudioCtaBanner: React.FC = () => (
+  <section className="relative overflow-hidden bg-[#9b1730] py-24 text-white sm:py-32">
+    <div className="absolute -right-10 -top-28 h-96 w-96 rounded-full border border-white/12" aria-hidden="true" />
+    <div className="absolute -right-28 -top-10 h-96 w-96 rounded-full border border-white/12" aria-hidden="true" />
+    <Container size="xl" className="relative">
+      <ScrollReveal>
+        <div className="grid gap-10 lg:grid-cols-[1fr_auto] lg:items-end">
+          <div>
+            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-white/65">A good place to begin</p>
+            <h2 className="mt-7 max-w-5xl text-balance text-[clamp(3rem,7vw,7.6rem)] font-semibold leading-[0.91] tracking-[-0.07em]">
+              Bring us the hard <span className="display-serif text-[#ffd9df] italic">problem.</span>
+            </h2>
           </div>
-        </ScrollReveal>
-      </Container>
-    </section>
-  );
-};
+          <div className="max-w-sm border-l border-white/30 pl-6">
+            <p className="text-sm leading-7 text-white/76">Tell us what you are trying to change. We’ll help turn the uncertainty into a clear product direction.</p>
+            <Link href="/contact" className="group mt-7 inline-flex min-h-12 items-center gap-3 bg-white px-5 text-sm font-semibold text-[#861329] transition-colors hover:bg-[#101916] hover:text-white">
+              Start a conversation
+              <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" strokeWidth={1.75} />
+            </Link>
+          </div>
+        </div>
+      </ScrollReveal>
+    </Container>
+  </section>
+);

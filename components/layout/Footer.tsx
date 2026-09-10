@@ -1,179 +1,60 @@
 import React from "react";
 import Link from "next/link";
+import { ArrowUpRight, Mail, MapPin } from "lucide-react";
 import { LaligurasLogo } from "@/components/ui/LaligurasLogo";
 import { Container } from "@/components/ui/Card";
 import { COMPANY_INFO } from "@/data/company";
-import { Mail, Phone, MapPin, Clock, Sparkles } from "lucide-react";
 
-export const Footer: React.FC = () => {
-  return (
-    <footer className="bg-[#0F2D24] text-white border-t border-[#1E4639]">
-      <Container size="xl">
-        {/* Main Footer Grid */}
-        <div className="py-16 lg:py-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8">
-          {/* Column 1: Brand & Mission */}
-          <div className="lg:col-span-2 space-y-5">
-            <LaligurasLogo variant="dark" size="md" />
-            <p className="text-sm text-[#C4D6CD] leading-relaxed max-w-sm">
-              Laliguras is a modern digital product engineering and technology studio. 
-              We partner with forward-thinking organizations to design, architect, and scale 
-              mission-critical software, custom enterprise platforms, and interactive 3D simulations.
-            </p>
-            <div className="flex items-center gap-2 text-xs font-medium text-[#A8BFB5] bg-[#163E32] px-3 py-2 rounded-lg border border-[#215645] max-w-fit">
-              <Sparkles className="w-3.5 h-3.5 text-[#E63952]" />
-              <span>Digital Product Studio • Kathmandu & Beyond</span>
-            </div>
-          </div>
+const STUDIO_LINKS = [
+  ["Studio", "/about"],
+  ["Services", "/services"],
+  ["Projects", "/projects"],
+  ["Team", "/team"],
+] as const;
 
-          {/* Column 2: Studio & Services */}
-          <div className="space-y-4">
-            <p className="text-xs font-bold uppercase tracking-wider text-[#A8BFB5]">
-              Services
-            </p>
-            <ul className="space-y-2.5 text-sm text-[#E2ECE7]">
-              <li>
-                <Link href="/services#digital-product-engineering" className="hover:text-white transition-colors">
-                  Product Engineering
-                </Link>
-              </li>
-              <li>
-                <Link href="/services#enterprise-platforms-lms" className="hover:text-white transition-colors">
-                  Enterprise LMS Platforms
-                </Link>
-              </li>
-              <li>
-                <Link href="/services#interactive-3d-simulations" className="hover:text-white transition-colors">
-                  360° Spatial Simulations
-                </Link>
-              </li>
-              <li>
-                <Link href="/services#ui-ux-design-systems" className="hover:text-white transition-colors">
-                  UI/UX & Design Systems
-                </Link>
-              </li>
-              <li>
-                <Link href="/services#cloud-devops-security" className="hover:text-white transition-colors">
-                  Cloud & Infrastructure
-                </Link>
-              </li>
-            </ul>
-          </div>
+const PROJECT_LINKS = [
+  ["SafeStep case study", "/projects/safestep"],
+  ["SafeStep platform", "/platform"],
+  ["Training catalogue", "/training"],
+  ["Questions", "/faq"],
+] as const;
 
-          {/* Column 3: Featured Work & SafeStep */}
-          <div className="space-y-4">
-            <p className="text-xs font-bold uppercase tracking-wider text-[#A8BFB5]">
-              Client Work
-            </p>
-            <ul className="space-y-2.5 text-sm text-[#E2ECE7]">
-              <li>
-                <Link
-                  href="/projects/safestep"
-                  className="text-white font-medium hover:text-[#F5C7CE] transition-colors flex items-center gap-1.5"
-                >
-                  <span>SafeStep Platform</span>
-                  <span className="text-[9px] uppercase px-1.5 py-0.5 rounded-sm bg-[#9E1A2F] text-white">
-                    Featured
-                  </span>
-                </Link>
-              </li>
-              <li>
-                <Link href="/projects#safestep" className="hover:text-white transition-colors">
-                  Health & Safety Case Study
-                </Link>
-              </li>
-              <li>
-                <Link href="/projects" className="hover:text-white transition-colors">
-                  All Client Projects
-                </Link>
-              </li>
-              <li>
-                <Link href="/team" className="hover:text-white transition-colors">
-                  Our Engineering Team
-                </Link>
-              </li>
-              <li>
-                <Link href="/faq" className="hover:text-white transition-colors">
-                  FAQ & Partnership Models
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Column 4: Contact & Studio Coordinates */}
-          <div className="space-y-4">
-            <p className="text-xs font-bold uppercase tracking-wider text-[#A8BFB5]">
-              Contact & Studio
-            </p>
-            <ul className="space-y-3 text-sm text-[#E2ECE7]">
-              <li className="flex items-start gap-2.5">
-                <MapPin className="w-4 h-4 text-[#E63952] shrink-0 mt-0.5" />
-                <span>{COMPANY_INFO.contact.location}</span>
-              </li>
-              <li className="flex items-center gap-2.5">
-                <Mail className="w-4 h-4 text-[#E63952] shrink-0" />
-                <a
-                  href={`mailto:${COMPANY_INFO.contact.email}`}
-                  className="hover:underline text-white"
-                >
-                  {COMPANY_INFO.contact.email}
-                </a>
-              </li>
-              <li className="flex items-center gap-2.5">
-                <Phone className="w-4 h-4 text-[#E63952] shrink-0" />
-                <a
-                  href={`tel:${COMPANY_INFO.contact.phone.replace(/\s+/g, "")}`}
-                  className="hover:underline text-white"
-                >
-                  {COMPANY_INFO.contact.phone}
-                </a>
-              </li>
-              <li className="flex items-start gap-2.5 text-xs text-[#A8BFB5]">
-                <Clock className="w-3.5 h-3.5 shrink-0 mt-0.5" />
-                <span>{COMPANY_INFO.contact.hours}</span>
-              </li>
-            </ul>
-          </div>
+export const Footer: React.FC = () => (
+  <footer className="relative overflow-hidden bg-[#0b1713] text-white">
+    <div className="absolute inset-x-0 top-0 h-44 bg-himalaya-pattern opacity-25" aria-hidden="true" />
+    <Container size="xl" className="relative">
+      <div className="grid gap-14 border-b border-white/15 py-16 sm:py-20 lg:grid-cols-[1.4fr_.6fr_.6fr] lg:gap-20 lg:py-24">
+        <div>
+          <LaligurasLogo variant="dark" size="md" />
+          <p className="mt-7 max-w-lg text-sm leading-7 text-white/58">An independent Nepalese technology studio designing and engineering thoughtful digital products, enterprise systems, and interactive experiences.</p>
+          <a href={`mailto:${COMPANY_INFO.contact.email}`} className="group mt-8 inline-flex items-center gap-2 border-b border-white/35 pb-1 text-sm font-semibold text-white transition-colors hover:border-[#ef93a5] hover:text-[#efb3bf]">
+            {COMPANY_INFO.contact.email}
+            <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" strokeWidth={1.75} />
+          </a>
         </div>
-
-        {/* Bottom Bar: Copyright, Legal & Socials */}
-        <div className="py-8 border-t border-[#1E4639] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#A8BFB5]">
-          <p>© 2026 Laliguras. All rights reserved. Engineering ambitious digital platforms.</p>
-
-          <div className="flex items-center gap-6">
-            <Link href="/privacy" className="hover:text-white transition-colors">
-              Privacy Policy
-            </Link>
-            <Link href="/terms" className="hover:text-white transition-colors">
-              Terms of Service
-            </Link>
-            <div className="flex items-center gap-3 pl-3 border-l border-[#215645]">
-              <a
-                href="https://linkedin.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[#A8BFB5] hover:text-white p-1 rounded transition-colors"
-                aria-label="Laliguras LinkedIn"
-              >
-                <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.45 1.45 0 0 0 1.45-1.45 1.46 1.46 0 0 0-1.45-1.45 1.48 1.48 0 0 0-1.48 1.45c0 .8.65 1.45 1.48 1.45m1.39 9.74v-8.37H5.07v8.37h2.78Z" />
-                </svg>
-              </a>
-              <a
-                href="https://twitter.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[#A8BFB5] hover:text-white p-1 rounded transition-colors"
-                aria-label="Laliguras X Twitter"
-              >
-                <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-                </svg>
-              </a>
-            </div>
-          </div>
+        <div>
+          <p className="mb-5 text-[10px] font-bold uppercase tracking-[0.2em] text-[#ef93a5]">Laliguras</p>
+          <ul className="space-y-3 text-sm text-white/65">
+            {STUDIO_LINKS.map(([label, href]) => <li key={href}><Link href={href} className="transition-colors hover:text-white">{label}</Link></li>)}
+          </ul>
         </div>
-      </Container>
-    </footer>
-  );
-};
+        <div>
+          <p className="mb-5 text-[10px] font-bold uppercase tracking-[0.2em] text-[#ef93a5]">SafeStep</p>
+          <ul className="space-y-3 text-sm text-white/65">
+            {PROJECT_LINKS.map(([label, href]) => <li key={href}><Link href={href} className="transition-colors hover:text-white">{label}</Link></li>)}
+          </ul>
+        </div>
+      </div>
 
+      <div className="flex flex-col gap-5 py-7 text-[11px] text-white/42 sm:flex-row sm:items-center sm:justify-between">
+        <p>© 2026 Laliguras. Built in Nepal, for everywhere.</p>
+        <div className="flex flex-wrap items-center gap-5">
+          <span className="inline-flex items-center gap-2"><MapPin className="h-3.5 w-3.5 text-[#ef93a5]" strokeWidth={1.75} /> {COMPANY_INFO.contact.location}</span>
+          <span className="inline-flex items-center gap-2"><Mail className="h-3.5 w-3.5 text-[#ef93a5]" strokeWidth={1.75} /> {COMPANY_INFO.contact.email}</span>
+          <Link href="/privacy" className="hover:text-white">Privacy</Link>
+          <Link href="/terms" className="hover:text-white">Terms</Link>
+        </div>
+      </div>
+    </Container>
+  </footer>
+);

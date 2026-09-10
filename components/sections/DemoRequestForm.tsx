@@ -100,20 +100,20 @@ export const DemoRequestForm: React.FC = () => {
 
   if (status === "success") {
     return (
-      <div className="bg-white rounded-2xl p-8 sm:p-10 border border-[#B4E5CE] shadow-md text-center space-y-5 animate-in fade-in">
+      <div className="border border-[#b4d6c4] bg-[#f8fbf9] p-8 text-center sm:p-10 space-y-5 animate-in fade-in">
         <div className="w-16 h-16 rounded-full bg-[#EBF9F1] border border-[#B4E5CE] text-[#0E6245] flex items-center justify-center mx-auto">
           <CheckCircle2 className="w-8 h-8" />
         </div>
         <div className="space-y-2">
           <h3 className="text-2xl font-bold text-[#0A1914]">
-            Demo Request Received!
+            Inquiry delivered
           </h3>
           <p className="text-sm text-[#3D4F47] max-w-md mx-auto leading-relaxed">
-            Thank you, <strong>{fullName}</strong>. Our technology and engineering team has received your inquiry for <strong>{organization}</strong>. We will review your requirements and reach out within 1 business day.
+            Thank you, <strong>{fullName}</strong>. Your inquiry for <strong>{organization}</strong> was accepted by the Laliguras contact service.
           </p>
         </div>
-        <div className="p-4 bg-[#F8FAF8] rounded-xl border border-[#E1E7E3] text-xs text-[#52665C] max-w-md mx-auto">
-          A confirmation note has been routed to <strong>{workEmail}</strong>.
+        <div className="border border-[#E1E7E3] bg-white p-4 text-xs text-[#52665C] max-w-md mx-auto">
+          We will use <strong>{workEmail}</strong> to follow up on this conversation.
         </div>
         <div className="pt-2">
           <Button variant="outline" size="sm" onClick={resetForm}>
@@ -125,22 +125,23 @@ export const DemoRequestForm: React.FC = () => {
   }
 
   return (
-    <div className="bg-white rounded-2xl p-6 sm:p-8 md:p-10 border border-[#E1E7E3] shadow-lg">
+    <div className="border border-black/12 bg-[#fbfaf7] p-6 shadow-[0_24px_70px_rgba(16,25,22,.08)] sm:p-8 md:p-10">
       <div className="mb-6 space-y-1">
         <h3 className="text-xl sm:text-2xl font-bold text-[#0A1914]">
-          Request a Demonstration
+          Start a conversation
         </h3>
         <p className="text-xs sm:text-sm text-[#52665C]">
-          Fill in the details below and our team will get in touch shortly.
+          Share a little context so we can understand where to begin.
         </p>
       </div>
 
       {serverError && (
-        <div className="mb-6 p-4 rounded-xl bg-[#FDF2F4] border border-[#F5C7CE] text-[#831526] flex items-start gap-3 text-xs">
+        <div className="mb-6 flex items-start gap-3 border border-[#F5C7CE] bg-[#FDF2F4] p-4 text-xs text-[#831526]">
           <AlertCircle className="w-4 h-4 shrink-0 mt-0.5" />
           <div>
             <p className="font-semibold">Submission Error</p>
             <p>{serverError}</p>
+            <a href="mailto:info@laliguras.com" className="mt-2 inline-block font-semibold underline underline-offset-2">Email Laliguras instead</a>
           </div>
         </div>
       )}
@@ -213,7 +214,7 @@ export const DemoRequestForm: React.FC = () => {
             size="lg"
             isLoading={status === "loading"}
             rightIcon={<ArrowRight className="w-4 h-4" />}
-            className="w-full justify-center shadow-md"
+            className="w-full justify-center rounded-none shadow-none"
           >
             {status === "loading" ? "Submitting Inquiry..." : "Submit Project Inquiry"}
           </Button>
@@ -222,7 +223,7 @@ export const DemoRequestForm: React.FC = () => {
 
         <div className="flex items-center justify-center gap-2 text-[11px] text-[#64766E] pt-2">
           <ShieldCheck className="w-3.5 h-3.5 text-[#0E6245]" />
-          <span>Your corporate data is handled securely and never shared.</span>
+          <span>Your details are sent only to the configured Laliguras inquiry service.</span>
         </div>
       </form>
     </div>

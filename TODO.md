@@ -28,7 +28,7 @@
   - [x] Phase 2 Multi-tenant LMS preparation models (`Tenant`, `Organization`, `Learner`, `Certificate`)
 - [x] Build centralized content data in `/data/`:
   - [x] `courses.ts` (Manual Handling, Fire Safety, COSHH, Working at Height, PPE, Emergency Procedures)
-  - [x] `team.ts` (Sakshyam Pokhrel, Sijan Kafle, Arbin Giri, Ishan Bhandari, Ayush Nepaune, Sukriti Rimal)
+  - [x] `team.ts` (Sakshyam Pokhrel, Sijan Kafle, Arbin Giri, Ishan Bhandari, Aayush Nepaune, Sukriti Rimal)
   - [x] `faqs.ts` (8 core questions answered with clarity)
   - [x] `company.ts` (Mission, Vision, Values, Story, contact coordinates)
   - [x] `platform.ts` (Capabilities, 360° scenario data points)
@@ -84,7 +84,7 @@
   - [x] Sijan Kafle
   - [x] Arbin Giri
   - [x] Ishan Bhandari
-  - [x] Ayush Nepaune
+  - [x] Aayush Nepaune
   - [x] Sukriti Rimal
 - [x] Clean neutral avatar placeholders, no fake AI portraits
 - [x] Extensible bio and LinkedIn links
@@ -124,3 +124,21 @@
 - [x] Clean semantic commits for each milestone
 - [x] Final push to `pokhrelboss/laliguras`
 - [x] Verify GitHub repository state
+
+## Phase 16: Laliguras Brand & Studio Design Pass (2026-09-11)
+- [x] Reposition the homepage around Laliguras as the company and SafeStep as a separate product project
+- [x] Add an original Himalayan and Laliguras rhododendron hero visual, optimized to a 134 KB WebP asset
+- [x] Replace the generic card-first homepage with editorial studio, services, selected work, principles, team, and contact compositions
+- [x] Add restrained hero parallax, staggered reveals, sticky project storytelling, hover states, and reduced-motion fallbacks
+- [x] Redesign global navigation, mobile menu, footer, and responsive brand lockups
+- [x] Redesign About, Services, Projects, SafeStep case study, Team, Contact, Training, Platform, and FAQ presentation
+- [x] Keep all six supplied team names exactly, including **Aayush Nepaune**, and remove invented biographies, roles, and placeholder social links
+- [x] Remove unverified portfolio projects, performance metrics, accreditation language, fake social URLs, and the placeholder phone number
+- [x] Replace the in-memory inquiry store and public submission listing with a fail-closed server webhook integration
+- [x] Verify contact validation and truthful unavailable-state behavior without a configured webhook
+- [x] Verify mobile navigation, FAQ filtering, course filtering and syllabus, and the SafeStep hazard interaction in a real production browser
+- [x] Verify all 13 public/fallback routes at 390 px and 768 px: one H1, zero missing images, zero empty links, and zero horizontal overflow
+- [x] Verify primary pages visually at 1440 px and review the complete revealed homepage from hero through footer
+- [x] Run `npm run lint` — zero warnings and errors
+- [x] Run `npx tsc --noEmit` — zero diagnostics
+- [x] Run `npm run build` — successful production build across all 19 generated routes

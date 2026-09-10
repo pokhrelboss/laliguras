@@ -45,23 +45,20 @@ export default function PlatformPage() {
   };
 
   return (
-    <div className="bg-[#F8FAF8]">
+    <div className="bg-[#f5f4ef]">
       {/* Platform Hero */}
-      <section className="py-16 md:py-24 border-b border-[#E1E7E3] bg-gradient-to-b from-[#F8FAF8] via-white to-[#F8FAF8]">
-        <Container size="xl">
-          <div className="max-w-3xl mx-auto text-center space-y-6">
-            <Badge variant="primary" size="md">
-              SAFESTEP PLATFORM • CLIENT BUILD BY LALIGURAS
-            </Badge>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-[#0A1914] tracking-tight leading-tight">
-              SafeStep: An Integrated Health and <br />
-              <span className="text-[#9E1A2F]">Safety Training Platform</span>
+      <section className="page-hero py-20 sm:py-28 lg:py-32">
+        <Container size="xl" className="relative z-10">
+          <div className="max-w-5xl space-y-6">
+            <span className="eyebrow">SafeStep · A separate Laliguras project</span>
+            <h1 className="text-balance text-5xl font-semibold leading-[.92] tracking-[-0.065em] text-[#101916] sm:text-7xl lg:text-8xl">
+              An integrated health and safety <span className="display-serif text-[#9b1730] italic">training platform.</span>
             </h1>
-            <p className="text-lg sm:text-xl text-[#3D4F47] leading-relaxed">
-              SafeStep is a flagship client platform designed and engineered by <strong>Laliguras</strong>. It provides an interactive and immersive learning experience designed to build practical knowledge and safer behaviours in the workplace.
+            <p className="max-w-2xl border-l border-[#9b1730] pl-6 text-base leading-8 text-[#52635b]">
+              SafeStep is a distinct product project created by Laliguras. Its current system brings training content, interactive practice, assessment, progress, and learner support into one experience.
             </p>
 
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 pt-2">
+            <div className="flex flex-col items-start gap-3.5 pt-2 sm:flex-row">
               <Button href="/contact" variant="primary" size="lg" rightIcon={<ArrowRight className="w-4 h-4" />}>
                 Request Platform Demo
               </Button>

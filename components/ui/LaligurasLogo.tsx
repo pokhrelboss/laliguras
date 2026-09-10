@@ -86,61 +86,25 @@ export const LaligurasLogo: React.FC<LaligurasLogoProps> = ({
       </div>
     );
   } else {
-    // Default: Horizontal Lockup composed with mark + wordmark
     innerContent = (
-      <div
-        className={cn(
-          "inline-flex items-center gap-2 sm:gap-2.5 select-none group transition-transform duration-200",
-          isDark && "bg-white/95 backdrop-blur-xs rounded-xl px-3 py-1.5 shadow-xs border border-white/20 hover:bg-white",
-          className
-        )}
-      >
-        {/* Emblem Mark (Letter L, blooming Rhododendron flowers & Himalayan mountains) */}
-        <div className="relative shrink-0 flex items-center">
-          <Image
-            src="/logo/laliguras-mark.png"
-            alt="Laliguras Mark"
-            width={currentMark.width}
-            height={currentMark.height}
-            priority={priority}
-            className={cn(
-              "object-contain transition-transform duration-300 group-hover:scale-105",
-              size === "sm" && "h-7 sm:h-8 w-auto",
-              size === "md" && "h-9 sm:h-11 md:h-12 w-auto",
-              size === "lg" && "h-12 sm:h-14 w-auto",
-              size === "xl" && "h-16 sm:h-18 w-auto"
-            )}
-          />
-        </div>
-
-        {/* Wordmark with flower petal dot on 'i' and flourish */}
-        <div className="flex flex-col justify-center">
-          <Image
-            src="/logo/laliguras-text.png"
-            alt="Laliguras"
-            width={currentMark.textWidth}
-            height={currentMark.textHeight}
-            priority={priority}
-            className={cn(
-              "object-contain mt-0.5",
-              size === "sm" && "h-4 sm:h-[18px] w-auto",
-              size === "md" && "h-5 sm:h-6 md:h-[25px] w-auto",
-              size === "lg" && "h-6 sm:h-7 w-auto",
-              size === "xl" && "h-8 sm:h-9 w-auto"
-            )}
-          />
-
-          {subtitle && (
-            <span
-              className={cn(
-                "text-[8px] sm:text-[9px] uppercase tracking-[0.2em] font-semibold mt-0.5",
-                isDark ? "text-[#52665C]" : "text-[#52665C]"
-              )}
-            >
-              {subtitle}
-            </span>
+      <div className={cn("inline-flex flex-col select-none transition-transform duration-300 hover:scale-[1.015]", className)}>
+        <Image
+          src={isDark ? "/logo/laliguras-horizontal-light.png" : "/logo/laliguras-horizontal.png"}
+          alt="Laliguras"
+          width={848}
+          height={259}
+          priority={priority}
+          className={cn(
+            "w-auto object-contain",
+            size === "sm" && "h-9 sm:h-10",
+            size === "md" && "h-11 sm:h-12",
+            size === "lg" && "h-14 sm:h-16",
+            size === "xl" && "h-18 sm:h-20"
           )}
-        </div>
+        />
+        {subtitle && (
+          <span className={cn("mt-0.5 text-[8px] font-semibold uppercase tracking-[0.2em]", isDark ? "text-white/60" : "text-[#52665C]")}>{subtitle}</span>
+        )}
       </div>
     );
   }

@@ -1,110 +1,59 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 import { Container } from "@/components/ui/Card";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
-import { ShieldCheck, Cpu, Users, ArrowUpRight } from "lucide-react";
-import Link from "next/link";
 
-export const WhatWeDoSection: React.FC = () => {
-  const pillars = [
-    {
-      num: "01",
-      title: "Architecture-First Engineering",
-      description: "We don't build disposable prototypes. We design solid data models, type-safe APIs, and maintainable cloud architectures built to withstand real operational loads and future feature expansion.",
-      icon: Cpu,
-    },
-    {
-      num: "02",
-      title: "Human-Centered Craft",
-      description: "Complex business software does not have to feel tedious. We combine ergonomic user journeys, crisp typography, and intuitive interfaces that frontline workers and enterprise executives genuinely enjoy using.",
-      icon: Users,
-    },
-    {
-      num: "03",
-      title: "Complete Client Ownership",
-      description: "We work as your dedicated technical partner. You own 100% of the intellectual property, clean source code, architectural documentation, and cloud infrastructure from day one.",
-      icon: ShieldCheck,
-    },
-  ];
+const PRINCIPLES = [
+  ["01", "Think clearly", "We begin with the problem, the people affected by it, and the system that must endure after launch."],
+  ["02", "Design with purpose", "Every screen, interaction, and technical choice earns its place. Restraint is part of the craft."],
+  ["03", "Build for reality", "We engineer maintainable products for real workflows, real constraints, and long-term ownership."],
+] as const;
 
-  return (
-    <section className="py-20 md:py-28 bg-white border-b border-[#E1E7E3]">
-      <Container size="xl">
-        {/* Section Header */}
-        <div className="max-w-3xl space-y-4 mb-16">
-          <ScrollReveal direction="up">
-            <span className="text-xs font-bold uppercase tracking-widest text-[#9E1A2F]">
-              What Laliguras Does
-            </span>
+export const WhatWeDoSection: React.FC = () => (
+  <section id="studio-intro" className="relative overflow-hidden bg-[#f5f4ef] py-24 sm:py-32 lg:py-40">
+    <div className="absolute -right-20 top-8 h-80 w-80 rounded-full border border-[#9b1730]/10" aria-hidden="true" />
+    <div className="absolute -right-5 top-24 h-56 w-56 rounded-full border border-[#102a22]/10" aria-hidden="true" />
+    <Container size="xl">
+      <div className="grid gap-14 lg:grid-cols-[minmax(0,1.45fr)_minmax(280px,.55fr)] lg:gap-24">
+        <div>
+          <ScrollReveal>
+            <span className="eyebrow">The studio</span>
           </ScrollReveal>
-          <ScrollReveal direction="up" delay={100}>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#0A1914] leading-[1.18]">
-              We translate ambitious ideas into resilient digital reality.
+          <ScrollReveal delay={90}>
+            <h2 className="mt-8 max-w-5xl text-balance text-[clamp(2.8rem,6.1vw,6.8rem)] font-semibold leading-[0.96] tracking-[-0.065em] text-[#101916]">
+              Digital craft, grounded in <span className="display-serif text-[#9b1730] italic">place</span> and built for the world.
             </h2>
           </ScrollReveal>
-          <ScrollReveal direction="up" delay={150}>
-            <p className="text-base sm:text-lg text-[#2E4038] leading-relaxed">
-              From bespoke enterprise systems like the SafeStep training platform to high-concurrency web applications, we partner with clients across the complete product lifecycle—from initial architecture to long-term operational scale.
-            </p>
-          </ScrollReveal>
         </div>
 
-        {/* 3 Pillars Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {pillars.map((pillar, idx) => {
-            const Icon = pillar.icon;
-            return (
-              <ScrollReveal key={pillar.num} direction="up" delay={idx * 120} duration={600}>
-                <div className="p-8 rounded-2xl bg-[#F8FAF8] border border-[#E1E7E3] hover:border-[#CCD6CE] hover:shadow-[0_12px_30px_rgba(10,25,20,0.04)] transition-all h-full flex flex-col justify-between group">
-                  <div className="space-y-4">
-                    <div className="flex items-center justify-between">
-                      <span className="font-mono text-sm font-bold text-[#9E1A2F]">
-                        {pillar.num}
-                      </span>
-                      <div className="p-2 rounded-xl bg-white border border-[#E1E7E3] text-[#0F2D24] group-hover:scale-110 transition-transform">
-                        <Icon className="w-5 h-5" />
-                      </div>
-                    </div>
-                    <h3 className="text-xl font-bold text-[#0A1914]">
-                      {pillar.title}
-                    </h3>
-                    <p className="text-sm text-[#52665C] leading-relaxed">
-                      {pillar.description}
-                    </p>
-                  </div>
-                </div>
-              </ScrollReveal>
-            );
-          })}
-        </div>
-
-        {/* Bottom Context Banner */}
-        <ScrollReveal direction="up" delay={300}>
-          <div className="mt-12 p-6 sm:p-8 rounded-2xl bg-[#0F2D24] text-white flex flex-col sm:flex-row sm:items-center justify-between gap-6">
-            <div className="space-y-1 max-w-xl">
-              <h4 className="text-lg font-bold text-white">Need a tailored platform for your organization?</h4>
-              <p className="text-sm text-[#C4D6CD]">
-                Explore how we engineered SafeStep as a custom client platform, or consult with us on your own project.
-              </p>
-            </div>
-            <div className="flex items-center gap-3 shrink-0">
-              <Link
-                href="/projects/safestep"
-                className="px-4 py-2.5 rounded-lg bg-[#9E1A2F] text-white text-xs font-semibold hover:bg-[#831526] transition-colors flex items-center gap-1.5"
-              >
-                SafeStep Case Study <ArrowUpRight className="w-4 h-4" />
-              </Link>
-              <Link
-                href="/services"
-                className="px-4 py-2.5 rounded-lg bg-[#163E32] text-white text-xs font-semibold hover:bg-[#1E4639] border border-[#215645] transition-colors"
-              >
-                Our Services
-              </Link>
-            </div>
-          </div>
+        <ScrollReveal direction="left" delay={170} className="self-end">
+          <p className="border-l border-[#9b1730] pl-6 text-base leading-8 text-[#52635b]">
+            Laliguras is an independent product and technology studio in Nepal. Like the rhododendron that gives us our name, our work is shaped by resilience, clarity, and the confidence to grow in demanding terrain.
+          </p>
+          <Link href="/about" className="group mt-8 inline-flex items-center gap-2 text-sm font-semibold text-[#101916]">
+            More about Laliguras
+            <ArrowUpRight className="h-4 w-4 text-[#9b1730] transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" strokeWidth={1.75} />
+          </Link>
         </ScrollReveal>
-      </Container>
-    </section>
-  );
-};
+      </div>
+
+      <div className="mt-20 grid border-y border-black/15 md:grid-cols-3 lg:mt-28">
+        {PRINCIPLES.map(([num, title, copy], index) => (
+          <ScrollReveal key={num} delay={index * 100} className="h-full">
+            <article className="group h-full px-0 py-8 md:min-h-60 md:border-l md:border-black/15 md:px-8 md:first:border-l-0 lg:px-10">
+              <div className="mb-14 flex items-center justify-between md:mb-20">
+                <span className="text-[10px] font-bold tracking-[0.2em] text-[#9b1730]">{num}</span>
+                <span className="petal-mark opacity-0 transition-opacity duration-300 group-hover:opacity-100" aria-hidden="true" />
+              </div>
+              <h3 className="text-xl font-semibold tracking-[-0.03em] text-[#101916]">{title}</h3>
+              <p className="mt-3 max-w-sm text-sm leading-6 text-[#65736c]">{copy}</p>
+            </article>
+          </ScrollReveal>
+        ))}
+      </div>
+    </Container>
+  </section>
+);

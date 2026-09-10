@@ -58,7 +58,7 @@ Inspired by the Laligurans flower and Himalayan resilience, balanced with world-
 - `/about` — **About Us:** Mission, Vision, Core Values, The Laliguras Story, dedication to workplace safety.
 - `/platform` — **Platform (SafeStep):** Deep dive into the interactive training ecosystem, 360° workplace scenario interactive simulation, video lessons, assessments, compliance tracking, and white-label capabilities.
 - `/training` — **Training Modules:** Catalog of professional safety courses (Manual Handling, Fire Safety, COSHH, Working at Height, PPE, Emergency Procedures) with duration, lessons count, and learning outcomes.
-- `/team` — **Our Team:** Dedicated showcase for the Laliguras team (Sakshyam Pokhrel, Sijan Kafle, Arbin Giri, Ishan Bhandari, Ayush Nepaune, Sukriti Rimal) with elegant neutral avatars and extensible social links.
+- `/team` — **Our Team:** Dedicated showcase for the Laliguras team (Sakshyam Pokhrel, Sijan Kafle, Arbin Giri, Ishan Bhandari, Aayush Nepaune, Sukriti Rimal) with elegant neutral avatars and optional, verified social links.
 - `/faq` — **Frequently Asked Questions:** Accessible accordions answering 8 critical questions on certification, mobile access, customization, and platform capabilities.
 - `/contact` — **Request Demo / Contact:** Complete request demo form with client and server-side validation, interest selector, feedback states, and company details.
 - `/privacy` & `/terms` — **Legal Policies:** Privacy policy and terms of service.
@@ -118,7 +118,7 @@ Inspired by the Laligurans flower and Himalayan resilience, balanced with world-
   2. **Sijan Kafle**
   3. **Arbin Giri**
   4. **Ishan Bhandari**
-  5. **Ayush Nepaune**
+  5. **Aayush Nepaune**
   6. **Sukriti Rimal**
 - Design requirement: No fabricated job titles; support optional roles, neutral avatars, LinkedIn/social fields, responsive grid (3-col desktop, 2-col tablet, 1-col mobile).
 

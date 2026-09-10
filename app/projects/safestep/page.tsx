@@ -1,397 +1,93 @@
-import { Metadata } from "next";
+import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
+import { ArrowLeft, ArrowUpRight, MoveDown } from "lucide-react";
 import { Container } from "@/components/ui/Card";
-import { Button } from "@/components/ui/Button";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { InteractiveHazardPreview } from "@/components/sections/InteractiveHazardPreview";
 import { PROJECTS } from "@/data/projects";
-import { 
-  ArrowLeft, 
-  ArrowRight, 
-  Sparkles, 
-  CheckCircle2, 
-  Award, 
-  Play
-} from "lucide-react";
+
+const safeStep = PROJECTS[0];
 
 export const metadata: Metadata = {
-  title: "SafeStep Showcase — An Integrated Health and Safety Training Platform",
-  description: "Explore SafeStep, an integrated workplace health and safety training platform designed and engineered by Laliguras for an occupational safety client.",
+  title: "SafeStep — Health and Safety Training Platform",
+  description: "Explore SafeStep, an integrated health and safety training platform created as a separate product project by Laliguras.",
 };
 
-export default function SafeStepCaseStudyPage() {
-  const safeStep = PROJECTS.find((p) => p.id === "safestep") || PROJECTS[0];
-
-
+export default function SafeStepProjectPage() {
   return (
-    <div className="bg-[#F8FAF8] min-h-screen">
-      
-      {/* Top Breadcrumb Header */}
-      <div className="bg-white border-b border-[#E1E7E3] py-4">
-        <Container size="xl">
-          <div className="flex items-center justify-between text-xs">
-            <Link 
-              href="/projects" 
-              className="text-[#52665C] hover:text-[#9E1A2F] flex items-center gap-1.5 transition-colors font-medium"
-            >
-              <ArrowLeft className="w-4 h-4" /> Back to All Projects
-            </Link>
-            <div className="flex items-center gap-2">
-              <span className="text-[#52665C]">Client:</span>
-              <span className="font-semibold text-[#0A1914]">Occupational Health & Safety Client</span>
-              <span className="text-[#A8BFB5]">•</span>
-              <span className="text-[#9E1A2F] font-semibold">Built by Laliguras</span>
-            </div>
-          </div>
-        </Container>
-      </div>
-
-      {/* Case Study Hero */}
-      <section className="py-20 md:py-28 bg-[#0F2D24] text-white relative overflow-hidden border-b border-[#1E4639]">
-        <div className="absolute inset-0 bg-himalaya-pattern opacity-10 pointer-events-none" />
-        <div className="absolute -top-32 right-1/3 w-[600px] h-[600px] bg-radial from-[#1E4639] to-transparent rounded-full opacity-50 blur-3xl pointer-events-none" />
-
+    <div className="min-h-screen bg-[#f5f4ef]">
+      <section className="grain relative overflow-hidden bg-[#0b1713] pb-24 pt-20 text-white sm:pb-32 sm:pt-28 lg:pb-40">
+        <div className="bg-himalaya-pattern absolute inset-0 opacity-30" aria-hidden="true" />
+        <div className="absolute -right-20 top-0 h-[520px] w-[520px] rounded-full bg-[#9b1730]/16 blur-[100px]" aria-hidden="true" />
         <Container size="xl" className="relative z-10">
-          <div className="max-w-4xl space-y-7">
-            <ScrollReveal direction="up">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#163E32] border border-[#215645] text-xs font-semibold text-[#F5C7CE]">
-                <Sparkles className="w-3.5 h-3.5 text-[#E63952]" />
-                <span>Client Case Study • Health & Safety Platform</span>
+          <ScrollReveal>
+            <Link href="/projects" className="mb-14 inline-flex items-center gap-2 text-xs font-semibold text-white/58 transition-colors hover:text-white"><ArrowLeft className="h-4 w-4" strokeWidth={1.75} /> All work</Link>
+            <div className="grid gap-10 lg:grid-cols-[1.15fr_.85fr] lg:items-end">
+              <div>
+                <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-[#ef93a5]">A separate Laliguras product project</p>
+                <h1 className="mt-6 text-[clamp(4.8rem,12vw,11rem)] font-semibold leading-[0.78] tracking-[-0.085em]">SafeStep</h1>
+                <p className="display-serif mt-7 max-w-3xl text-2xl italic leading-tight text-[#f3c7cf] sm:text-4xl">An Integrated Health and Safety Training Platform</p>
               </div>
-            </ScrollReveal>
-
-            <ScrollReveal direction="up" delay={100}>
-              <h1 className="text-4xl sm:text-6xl font-bold tracking-tight text-white leading-[1.08]">
-                SafeStep
-              </h1>
-              <p className="text-2xl sm:text-3xl text-[#F5C7CE] font-medium mt-2">
-                An Integrated Health and Safety Training Platform
-              </p>
-            </ScrollReveal>
-
-            <ScrollReveal direction="up" delay={150}>
-              <p className="text-lg sm:text-xl text-[#C4D6CD] leading-relaxed max-w-3xl">
-                A modern workplace health and safety training platform featuring interactive learning, practical training modules, assessments, progress tracking, certificates and immersive real-world safety scenarios. Designed and developed by <strong className="text-white">Laliguras</strong>.
-              </p>
-            </ScrollReveal>
-
-            {/* Metrics Bar */}
-            <ScrollReveal direction="up" delay={200}>
-              <div className="pt-6 border-t border-[#1E4639] grid grid-cols-2 sm:grid-cols-4 gap-6">
-                {safeStep.metrics.map((metric, idx) => (
-                  <div key={idx} className="space-y-1">
-                    <p className="text-3xl font-bold text-white font-mono">{metric.value}</p>
-                    <p className="text-xs font-semibold text-[#F5C7CE]">{metric.label}</p>
-                    {metric.context && (
-                      <p className="text-[10px] text-[#A8BFB5]">{metric.context}</p>
-                    )}
-                  </div>
-                ))}
+              <div className="border-l border-white/25 pl-6">
+                <p className="text-sm leading-7 text-white/66">{safeStep.summary}</p>
+                <a href="#product-architecture" className="mt-7 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.14em] text-white">Explore the system <MoveDown className="h-4 w-4 text-[#ef93a5]" strokeWidth={1.75} /></a>
               </div>
-            </ScrollReveal>
-
-            {/* Quick Action Navigation */}
-            <ScrollReveal direction="up" delay={250}>
-              <div className="flex flex-wrap items-center gap-4 pt-2">
-                <a
-                  href="#interactive-sim"
-                  className="px-6 py-3.5 rounded-xl bg-[#9E1A2F] text-white text-sm font-semibold hover:bg-[#831526] transition-all shadow-md flex items-center gap-2"
-                >
-                  Test 360° Hazard Simulator <ArrowRight className="w-4 h-4" />
-                </a>
-                <a
-                  href="#product-architecture"
-                  className="px-6 py-3.5 rounded-xl bg-[#163E32] text-white text-sm font-semibold hover:bg-[#1E4639] border border-[#215645] transition-all"
-                >
-                  Product Architecture Tour
-                </a>
-              </div>
-            </ScrollReveal>
-          </div>
-        </Container>
-      </section>
-
-      {/* Client Challenge vs Laliguras Solution */}
-      <section className="py-20 bg-white border-b border-[#E1E7E3]">
-        <Container size="xl">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            
-            {/* The Challenge */}
-            <ScrollReveal direction="up" delay={50}>
-              <div className="p-8 sm:p-10 rounded-3xl bg-[#F8FAF8] border border-[#E1E7E3] h-full space-y-4">
-                <span className="text-xs font-bold uppercase tracking-wider text-[#9E1A2F]">
-                  The Client Challenge
-                </span>
-                <h2 className="text-2xl font-bold text-[#0A1914]">
-                  Passive compliance checklists failed to prevent physical injuries.
-                </h2>
-                <p className="text-sm text-[#2E4038] leading-relaxed">
-                  Traditional safety training was delivered through static slideshows and PDF binders that workers skipped through. Frontline personnel could answer theoretical multiple-choice questions on paper, but failed to recognize dynamic hazards like blind forklift intersections or chemical spills on physical warehouse floors.
-                </p>
-                <div className="pt-3 border-t border-[#E1E7E3] space-y-2 text-xs text-[#52665C]">
-                  <p className="font-semibold text-[#0A1914]">Client Objectives:</p>
-                  <ul className="space-y-1.5">
-                    <li>• Replace passive compliance with practical situational judgment.</li>
-                    <li>• Provide measurable learner progress tracking for managers.</li>
-                    <li>• Issue tamper-evident audit-proof digital certifications.</li>
-                  </ul>
-                </div>
-              </div>
-            </ScrollReveal>
-
-            {/* The Laliguras Solution */}
-            <ScrollReveal direction="up" delay={150}>
-              <div className="p-8 sm:p-10 rounded-3xl bg-[#0F2D24] text-white h-full space-y-4 shadow-xl border border-[#1E4639]">
-                <span className="text-xs font-bold uppercase tracking-wider text-[#F5C7CE]">
-                  The Laliguras Solution
-                </span>
-                <h2 className="text-2xl font-bold text-white">
-                  SafeStep: An interactive, spatial training suite built for real retention.
-                </h2>
-                <p className="text-sm text-[#C4D6CD] leading-relaxed">
-                  Laliguras architected and developed SafeStep from the ground up. We designed modular micro-learning chapters, high-definition video ergonomics, in-browser 360° warehouse simulations, and cryptographic verification seals. The platform runs natively across mobile and desktop browsers with zero app installs required.
-                </p>
-                <div className="pt-3 border-t border-[#1E4639] space-y-2 text-xs text-[#A8BFB5]">
-                  <p className="font-semibold text-white">Key Delivery Highlights:</p>
-                  <ul className="space-y-1.5">
-                    <li>• 10 core modular product capabilities integrated into one unified portal.</li>
-                    <li>• Native 360° interactive canvas running smoothly at 60fps.</li>
-                    <li>• Multi-tenant enterprise architecture ready for white-label client rollouts.</li>
-                  </ul>
-                </div>
-              </div>
-            </ScrollReveal>
-
-          </div>
-        </Container>
-      </section>
-
-      {/* Visual Product Tour (Scrollytelling Product Architecture) */}
-      <section id="product-architecture" className="py-20 md:py-28 bg-[#F8FAF8] border-b border-[#E1E7E3]">
-        <Container size="xl">
-          
-          <div className="max-w-3xl space-y-4 mb-16">
-            <ScrollReveal direction="up">
-              <span className="text-xs font-bold uppercase tracking-widest text-[#9E1A2F]">
-                Product Tour
-              </span>
-            </ScrollReveal>
-            <ScrollReveal direction="up" delay={100}>
-              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#0A1914]">
-                Inside the SafeStep Product Architecture
-              </h2>
-            </ScrollReveal>
-            <ScrollReveal direction="up" delay={150}>
-              <p className="text-base text-[#2E4038] leading-relaxed">
-                Explore the key features designed and engineered by Laliguras for the SafeStep platform ecosystem.
-              </p>
-            </ScrollReveal>
-          </div>
-
-          {/* Product Tour Feature Blocks */}
-          <div className="space-y-16">
-            
-            {/* Feature 1: Learner Dashboard */}
-            <ScrollReveal direction="up">
-              <div className="p-8 sm:p-12 rounded-3xl bg-white border border-[#E1E7E3] shadow-xs grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-                <div className="lg:col-span-6 space-y-5">
-                  <span className="text-xs font-bold uppercase tracking-wider text-[#9E1A2F]">
-                    01. Learner Dashboard
-                  </span>
-                  <h3 className="text-2xl sm:text-3xl font-bold text-[#0A1914]">
-                    Intuitive Daily Progress & Habit Tracking
-                  </h3>
-                  <p className="text-sm text-[#2E4038] leading-relaxed">
-                    Designed for busy operational schedules, the SafeStep dashboard provides employees with immediate visibility into their ongoing training: 3/5 modules completed (60%), 2 earned certificates, active 5-day learning streak, and 4.5 total hours logged.
-                  </p>
-                  <ul className="space-y-2 text-xs text-[#52665C]">
-                    <li className="flex items-center gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-[#22C55E]" />
-                      <span>Single-click &apos;Continue Learning&apos; card for active courses</span>
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-[#22C55E]" />
-                      <span>Dedicated navigation: Dashboard, Modules, Assessments, Certificates</span>
-                    </li>
-                  </ul>
-                </div>
-
-                {/* Dashboard Visual Mockup Card */}
-                <div className="lg:col-span-6 bg-[#0F2D24] rounded-2xl p-6 border border-[#1E4639] text-white space-y-4 shadow-xl">
-                  <div className="flex items-center justify-between pb-3 border-b border-[#1E4639] text-xs">
-                    <span className="font-semibold text-[#F5C7CE]">SafeStep Learner Portal</span>
-                    <span className="text-xs bg-[#163E32] text-[#22C55E] px-2 py-0.5 rounded">Active Session</span>
-                  </div>
-                  <div className="grid grid-cols-2 gap-3">
-                    <div className="p-3.5 rounded-xl bg-[#163E32] border border-[#215645]">
-                      <p className="text-[11px] text-[#A8BFB5]">Training Progress</p>
-                      <p className="text-xl font-bold text-white mt-1">3 / 5 Modules</p>
-                      <div className="w-full h-1.5 bg-[#0F2D24] rounded-full mt-2 overflow-hidden">
-                        <div className="w-[60%] h-full bg-[#9E1A2F]" />
-                      </div>
-                    </div>
-                    <div className="p-3.5 rounded-xl bg-[#163E32] border border-[#215645]">
-                      <p className="text-[11px] text-[#A8BFB5]">Certificates</p>
-                      <p className="text-xl font-bold text-white mt-1">2 Earned</p>
-                      <span className="text-[10px] text-[#22C55E]">Audited & Verified</span>
-                    </div>
-                  </div>
-                  <div className="p-3.5 rounded-xl bg-[#163E32] border border-[#215645] flex items-center justify-between">
-                    <div>
-                      <p className="text-xs font-bold text-white">Manual Handling Training</p>
-                      <p className="text-[10px] text-[#A8BFB5]">6 lessons • 30 mins</p>
-                    </div>
-                    <span className="px-3 py-1 rounded bg-[#9E1A2F] text-xs font-semibold text-white">
-                      In Progress (60%)
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </ScrollReveal>
-
-            {/* Feature 2: Video Learning & Ergonomics */}
-            <ScrollReveal direction="up">
-              <div className="p-8 sm:p-12 rounded-3xl bg-white border border-[#E1E7E3] shadow-xs grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-                <div className="lg:col-span-6 space-y-5 lg:order-2">
-                  <span className="text-xs font-bold uppercase tracking-wider text-[#9E1A2F]">
-                    02. Video Learning Engine
-                  </span>
-                  <h3 className="text-2xl sm:text-3xl font-bold text-[#0A1914]">
-                    Practical Ergonomics & Posture Instruction
-                  </h3>
-                  <p className="text-sm text-[#2E4038] leading-relaxed">
-                    Instead of generic animations, SafeStep delivers filmed workplace ergonomics showing real workers demonstrating correct kinetic lifting techniques, posture angles, and hazardous chemical handling.
-                  </p>
-                  <ul className="space-y-2 text-xs text-[#52665C]">
-                    <li className="flex items-center gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-[#22C55E]" />
-                      <span>Chaptered outline: Introduction, Risk Factors, Proper Lifting, Summary</span>
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-[#22C55E]" />
-                      <span>Mark as Complete milestone gates preventing blind skips</span>
-                    </li>
-                  </ul>
-                </div>
-
-                {/* Video Mockup Card */}
-                <div className="lg:col-span-6 bg-[#0A1914] rounded-2xl p-6 border border-[#1E4639] text-white space-y-4 lg:order-1 shadow-xl">
-                  <div className="aspect-video bg-[#163E32] rounded-xl flex flex-col items-center justify-center relative overflow-hidden border border-[#215645] group">
-                    <div className="w-14 h-14 rounded-full bg-[#9E1A2F] text-white flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform cursor-pointer">
-                      <Play className="w-6 h-6 ml-0.5" />
-                    </div>
-                    <div className="absolute bottom-3 left-4 right-4 flex items-center justify-between text-xs text-white/90">
-                      <span>1. Correct Lifting Techniques</span>
-                      <span className="font-mono">02:34 / 04:15</span>
-                    </div>
-                  </div>
-                  <div className="flex items-center justify-between text-xs text-[#A8BFB5]">
-                    <span>Module: Manual Handling Training</span>
-                    <span className="text-[#22C55E]">Chapter 1 of 6</span>
-                  </div>
-                </div>
-              </div>
-            </ScrollReveal>
-
-            {/* Feature 3: Assessments & Digital Certification */}
-            <ScrollReveal direction="up">
-              <div className="p-8 sm:p-12 rounded-3xl bg-white border border-[#E1E7E3] shadow-xs grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-                <div className="lg:col-span-6 space-y-5">
-                  <span className="text-xs font-bold uppercase tracking-wider text-[#9E1A2F]">
-                    03. Knowledge Checks & Certificates
-                  </span>
-                  <h3 className="text-2xl sm:text-3xl font-bold text-[#0A1914]">
-                    Scenario-Based Assessments & Verifiable Credentials
-                  </h3>
-                  <p className="text-sm text-[#2E4038] leading-relaxed">
-                    Learners demonstrate genuine competence through scenario-based evaluations requiring an 80% passing grade. Upon completion, SafeStep cryptographically generates a Certificate of Completion with a unique SHA-256 verification hash.
-                  </p>
-                  <ul className="space-y-2 text-xs text-[#52665C]">
-                    <li className="flex items-center gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-[#22C55E]" />
-                      <span>Instant score feedback (e.g. 8/10 • 80%) with remediation advice</span>
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-[#22C55E]" />
-                      <span>Printable, auditable PDF credentials with employer verification portal</span>
-                    </li>
-                  </ul>
-                </div>
-
-                {/* Certificate Mockup Visual */}
-                <div className="lg:col-span-6 p-6 rounded-2xl bg-white border-2 border-[#CCD6CE] shadow-xl space-y-4 text-center">
-                  <div className="p-6 border border-[#E1E7E3] rounded-xl space-y-3 bg-[#F8FAF8]">
-                    <div className="w-10 h-10 mx-auto rounded-full bg-[#EBF3F0] text-[#0F2D24] flex items-center justify-center">
-                      <Award className="w-5 h-5 text-[#9E1A2F]" />
-                    </div>
-                    <p className="text-xs font-bold uppercase tracking-widest text-[#9E1A2F]">
-                      Certificate of Completion
-                    </p>
-                    <p className="text-xs text-[#52665C]">This is to certify that</p>
-                    <p className="text-lg font-bold text-[#0A1914]">Sijan Bhandari</p>
-                    <p className="text-xs text-[#2E4038]">
-                      has successfully completed <strong>Manual Handling Training</strong>
-                    </p>
-                    <div className="pt-3 border-t border-[#E1E7E3] flex justify-between items-center text-[10px] text-[#52665C]">
-                      <span>Issued: 10 September 2026</span>
-                      <span className="font-mono">Hash: #SS-9821A-VERIFIED</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </ScrollReveal>
-
-          </div>
-        </Container>
-      </section>
-
-      {/* LIVE INTERACTIVE 360° HAZARD SIMULATOR SECTION */}
-      <section id="interactive-sim" className="scroll-mt-16">
-        <div className="bg-[#0F2D24] text-white py-12 border-b border-[#1E4639]">
-          <Container size="xl">
-            <div className="max-w-2xl space-y-2">
-              <span className="text-xs font-bold uppercase tracking-widest text-[#F5C7CE]">
-                SafeStep Live Simulation Feature
-              </span>
-              <h2 className="text-3xl font-bold text-white">
-                Interactive 360° Warehouse Hazard Simulator
-              </h2>
-              <p className="text-sm text-[#C4D6CD]">
-                Experience the exact spatial training module engineered by Laliguras for SafeStep. Click the pulsating hazard markers to identify workplace safety risks in real time.
-              </p>
             </div>
-          </Container>
-        </div>
-        
-        {/* Render our verified interactive hazard simulator right here! */}
+          </ScrollReveal>
+        </Container>
+      </section>
+
+      <section className="relative -mt-12 pb-24 sm:-mt-16 sm:pb-32">
+        <Container size="xl">
+          <ScrollReveal direction="up" duration={900}>
+            <div className="safe-frame overflow-hidden rounded-[1.25rem] border border-white/10 bg-[#071713] p-2.5 sm:rounded-[1.8rem] sm:p-4">
+              <div className="mb-3 flex items-center justify-between px-2 py-1 text-[9px] font-semibold uppercase tracking-[0.16em] text-white/45"><span>SafeStep product system</span><span className="hidden sm:block">Designed by Laliguras</span></div>
+              <Image src="/reference/prototype-reference.png" alt="SafeStep marketing, dashboard, module, scenario, assessment, certificate, profile, and help interfaces" width={3072} height={1536} priority sizes="100vw" className="h-auto w-full rounded-xl" />
+            </div>
+          </ScrollReveal>
+        </Container>
+      </section>
+
+      <section id="product-architecture" className="pb-24 sm:pb-32 lg:pb-40">
+        <Container size="xl">
+          <div className="grid gap-14 lg:grid-cols-[.42fr_.58fr] lg:gap-24">
+            <ScrollReveal>
+              <div className="lg:sticky lg:top-28">
+                <span className="eyebrow">The system</span>
+                <h2 className="mt-7 text-4xl font-semibold leading-[1] tracking-[-0.055em] text-[#101916] sm:text-6xl">One connected journey, not a pile of features.</h2>
+                <p className="mt-7 text-sm leading-7 text-[#5f6c66]">SafeStep organizes the learner experience from first contact through learning, practice, assessment, completion, and support.</p>
+              </div>
+            </ScrollReveal>
+            <div className="border-t border-black/15">
+              {safeStep.features.map((feature, index) => (
+                <ScrollReveal key={feature.title} delay={(index % 4) * 45}>
+                  <article className="grid gap-4 border-b border-black/15 py-6 sm:grid-cols-[52px_1fr_1.2fr] sm:items-start sm:py-8">
+                    <span className="text-[10px] font-bold tracking-[0.18em] text-[#9b1730]">{String(index + 1).padStart(2, "0")}</span>
+                    <h3 className="text-lg font-semibold tracking-[-0.025em] text-[#101916]">{feature.title}</h3>
+                    <p className="text-sm leading-6 text-[#65736c]">{feature.description}</p>
+                  </article>
+                </ScrollReveal>
+              ))}
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      <section id="interactive-sim" className="border-y border-black/10 bg-[#faf9f5] py-6 sm:py-10">
         <InteractiveHazardPreview />
       </section>
 
-      {/* Case Study Consultation Banner */}
-      <section className="py-20 bg-white border-t border-[#E1E7E3]">
+      <section className="bg-[#102a22] py-24 text-white sm:py-32">
         <Container size="xl">
-          <div className="max-w-3xl mx-auto text-center space-y-6">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#FDF2F4] text-[#9E1A2F] text-xs font-bold border border-[#F5C7CE]">
-              Enterprise Platform Inquiries
+          <ScrollReveal>
+            <div className="grid gap-12 lg:grid-cols-[1fr_auto] lg:items-end">
+              <div><p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#ef93a5]">Project perspective</p><h2 className="mt-6 max-w-4xl text-balance text-4xl font-semibold leading-[1] tracking-[-0.055em] sm:text-6xl">Safety learning works best when people can <span className="display-serif text-[#f3c7cf] italic">act, not only watch.</span></h2></div>
+              <div className="max-w-sm border-l border-white/20 pl-6"><p className="text-sm leading-7 text-white/62">The interactive scenario above is a functional preview. It remains intentionally lightweight while demonstrating the product’s learning direction.</p><Link href="/contact" className="group mt-7 inline-flex min-h-12 items-center gap-2 bg-[#9b1730] px-5 text-sm font-semibold text-white transition-colors hover:bg-white hover:text-[#101916]">Discuss a project <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" strokeWidth={1.75} /></Link></div>
             </div>
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#0A1914]">
-              Interested in a custom training platform like SafeStep?
-            </h2>
-            <p className="text-base text-[#2E4038]">
-              Laliguras engineers bespoke learning management portals, interactive 3D simulations, and enterprise compliance systems tailored to your company&apos;s exact risk profile.
-            </p>
-            <div className="pt-2 flex flex-wrap justify-center gap-4">
-              <Button href="/contact" variant="primary" size="lg" rightIcon={<ArrowRight className="w-4 h-4" />}>
-                Request Platform Consultation
-              </Button>
-              <Button href="/projects" variant="outline" size="lg">
-                View Other Projects
-              </Button>
-            </div>
-          </div>
+          </ScrollReveal>
         </Container>
       </section>
-
     </div>
   );
 }

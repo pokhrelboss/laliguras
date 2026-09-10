@@ -14,7 +14,7 @@ export const FaqSection: React.FC<FaqSectionProps> = ({ initialFaqs }) => {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState<string>("All");
 
-  const categories = ["All", "General", "Certification", "Technology", "Enterprise"];
+  const categories = ["All", ...Array.from(new Set(initialFaqs.map((faq) => faq.category)))];
 
   const filteredFaqs = initialFaqs.filter((faq) => {
     const matchesCategory =
@@ -35,7 +35,7 @@ export const FaqSection: React.FC<FaqSectionProps> = ({ initialFaqs }) => {
     <div className="space-y-8 max-w-4xl mx-auto">
       {/* Category Pills and Search */}
       <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pb-4">
-        <div className="flex items-center gap-1.5 overflow-x-auto w-full sm:w-auto pb-2 sm:pb-0 scrollbar-none">
+        <div className="flex w-full flex-wrap items-center gap-1.5 sm:w-auto">
           {categories.map((cat) => {
             const isSelected = selectedCategory === cat;
             return (

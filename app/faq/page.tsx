@@ -1,64 +1,26 @@
-import React from "react";
 import type { Metadata } from "next";
+import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 import { Container } from "@/components/ui/Card";
-import { Badge } from "@/components/ui/Badge";
-import { Button } from "@/components/ui/Button";
+import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { FAQS } from "@/data/faqs";
 import { FaqSection } from "@/components/sections/FaqSection";
-import { Mail, HelpCircle } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Frequently Asked Questions | Laliguras SafeStep",
-  description:
-    "Find answers to common questions about Laliguras safety training, certificates, mobile access, organization management, and demo requests.",
+  title: "Questions & Answers",
+  description: "Answers about Laliguras, project engagements, and the SafeStep health and safety training product.",
 };
 
 export default function FaqPage() {
   return (
-    <div className="bg-[#F8FAF8] py-16 md:py-24">
-      <Container size="xl" className="space-y-12">
-        {/* Header */}
-        <div className="max-w-3xl mx-auto text-center space-y-4">
-          <Badge variant="crimson" size="sm">
-            Support & Help
-          </Badge>
-          <h1 className="text-4xl sm:text-5xl font-extrabold text-[#0A1914] tracking-tight">
-            Frequently Asked Questions
-          </h1>
-          <p className="text-base sm:text-lg text-[#3D4F47] leading-relaxed">
-            Everything you need to know about our health and safety curriculum, verifiable certifications, and enterprise deployment options.
-          </p>
-        </div>
+    <div className="min-h-screen bg-[#f5f4ef]">
+      <section className="page-hero py-24 sm:py-32">
+        <Container size="xl" className="relative z-10"><ScrollReveal><span className="eyebrow">Questions & answers</span><h1 className="mt-8 max-w-5xl text-balance text-[clamp(3.5rem,8vw,8rem)] font-semibold leading-[0.9] tracking-[-0.07em] text-[#101916]">Clarity before <span className="display-serif text-[#9b1730] italic">commitment.</span></h1><p className="mt-8 max-w-2xl border-l border-[#9b1730] pl-6 text-base leading-8 text-[#52635b]">A practical starting point for questions about Laliguras and SafeStep.</p></ScrollReveal></Container>
+      </section>
 
-        {/* FAQ Accordion Component */}
-        <FaqSection initialFaqs={FAQS} />
-
-        {/* Still Have Questions Box */}
-        <div className="max-w-4xl mx-auto p-8 rounded-2xl bg-[#EBF3F0] border border-[#CDE1D9] flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
-          <div className="flex items-center gap-4">
-            <div className="w-12 h-12 rounded-xl bg-[#0F2D24] text-white flex items-center justify-center shrink-0">
-              <HelpCircle className="w-6 h-6 text-[#E63952]" />
-            </div>
-            <div>
-              <h3 className="text-base sm:text-lg font-bold text-[#0F2D24]">
-                Have a question not listed here?
-              </h3>
-              <p className="text-xs sm:text-sm text-[#1E4639]">
-                Our safety advisory team is available to assist your organization.
-              </p>
-            </div>
-          </div>
-          <Button
-            href="/contact"
-            variant="primary"
-            size="md"
-            leftIcon={<Mail className="w-4 h-4" />}
-            className="shrink-0 w-full sm:w-auto"
-          >
-            Contact Our Team
-          </Button>
-        </div>
-      </Container>
+      <section className="py-20 sm:py-28">
+        <Container size="xl"><div className="grid gap-12 lg:grid-cols-[.3fr_.7fr] lg:gap-20"><ScrollReveal><div className="lg:sticky lg:top-28"><p className="text-sm leading-7 text-[#5f6c66]">Use the category filters to focus the list. Each answer reflects the current public scope of the studio and product.</p><Link href="/contact" className="group mt-7 inline-flex items-center gap-2 text-sm font-semibold text-[#101916]">Ask something else <ArrowUpRight className="h-4 w-4 text-[#9b1730] transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" strokeWidth={1.75} /></Link></div></ScrollReveal><ScrollReveal direction="left" delay={90}><FaqSection initialFaqs={FAQS} /></ScrollReveal></div></Container>
+      </section>
     </div>
   );
 }

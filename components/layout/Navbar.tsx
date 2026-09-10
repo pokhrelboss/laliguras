@@ -1,197 +1,101 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { ArrowUpRight, Menu, X } from "lucide-react";
 import { LaligurasLogo } from "@/components/ui/LaligurasLogo";
-import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Card";
-import { Menu, X, ArrowRight, Sparkles } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const NAV_LINKS = [
-  { name: "Home", href: "/" },
-  { name: "About", href: "/about" },
+  { name: "Studio", href: "/about" },
   { name: "Services", href: "/services" },
-  { name: "Projects", href: "/projects" },
-  { name: "SafeStep", href: "/projects/safestep", badge: "Case Study" },
+  { name: "Work", href: "/projects" },
   { name: "Team", href: "/team" },
-  { name: "FAQ", href: "/faq" },
-  { name: "Contact", href: "/contact" },
+  { name: "Journal", href: "/faq" },
 ];
 
 export const Navbar: React.FC = () => {
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const overHero = pathname === "/" && !scrolled && !mobileMenuOpen;
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-    };
+    const handleScroll = () => setScrolled(window.scrollY > 36);
+    handleScroll();
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Lock body scroll when mobile menu is open
   useEffect(() => {
-    if (mobileMenuOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "unset";
-    }
-    return () => {
-      document.body.style.overflow = "unset";
-    };
+    document.body.style.overflow = mobileMenuOpen ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
   }, [mobileMenuOpen]);
 
   return (
-    <header
-      className={cn(
-        "sticky top-0 z-50 w-full transition-all duration-200",
-        scrolled
-          ? "bg-white/95 backdrop-blur-md shadow-xs border-b border-[#E1E7E3]"
-          : "bg-[#F8FAF8]/90 backdrop-blur-xs border-b border-transparent"
-      )}
-    >
+    <header className={cn(
+      "sticky top-0 z-50 w-full border-b transition-[background-color,border-color,box-shadow] duration-500",
+      overHero
+        ? "border-white/10 bg-[#08120f]/90 text-white backdrop-blur-xl"
+        : "border-black/10 bg-[#f5f4ef]/92 text-[#101916] shadow-[0_10px_35px_rgba(10,25,20,.06)] backdrop-blur-xl"
+    )}>
       <Container size="xl">
-        <div className="flex h-16 sm:h-20 items-center justify-between gap-4">
-          {/* Brand Logo */}
-          <div className="flex shrink-0 items-center">
-            <LaligurasLogo size="md" priority />
-          </div>
+        <div className="flex h-16 items-center justify-between gap-5 sm:h-20">
+          <LaligurasLogo size="sm" variant={overHero ? "dark" : "light"} priority />
 
-          {/* Desktop Navigation Links */}
-          <nav className="hidden xl:flex items-center gap-1 xl:gap-2" aria-label="Main Navigation">
+          <nav className="hidden items-center gap-7 lg:flex" aria-label="Main navigation">
             {NAV_LINKS.map((link) => {
-              const isActive = pathname === link.href || (link.href !== "/" && pathname.startsWith(link.href));
+              const active = pathname === link.href || (link.href !== "/" && pathname.startsWith(link.href));
               return (
-                <Link
-                  key={link.name}
-                  href={link.href}
-                  className={cn(
-                    "px-3 py-2 text-sm font-medium rounded-md transition-colors relative flex items-center gap-1.5",
-                    isActive
-                      ? "text-[#9E1A2F] font-semibold"
-                      : "text-[#2E4038] hover:text-[#0A1914] hover:bg-[#F1F5F2]"
-                  )}
-                >
-                  <span>{link.name}</span>
-                  {link.badge && (
-                    <span className="text-[10px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded-full bg-[#FDF2F4] text-[#9E1A2F] border border-[#F5C7CE]">
-                      {link.badge}
-                    </span>
-                  )}
-                  {isActive && (
-                    <span className="absolute bottom-0 left-3 right-3 h-0.5 bg-[#9E1A2F] rounded-full" />
-                  )}
+                <Link key={link.name} href={link.href} className={cn(
+                  "relative py-2 text-[13px] font-medium transition-colors after:absolute after:inset-x-0 after:-bottom-0.5 after:h-px after:origin-left after:scale-x-0 after:bg-[#a91836] after:transition-transform hover:after:scale-x-100",
+                  overHero ? "text-white/72 hover:text-white" : "text-[#35453e] hover:text-[#101916]",
+                  active && (overHero ? "text-white after:scale-x-100" : "text-[#9b1730] after:scale-x-100")
+                )}>
+                  {link.name}
                 </Link>
               );
             })}
           </nav>
 
-          {/* Desktop Right CTA */}
-          <div className="hidden xl:flex items-center gap-3">
-            <Button
-              href="/contact"
-              variant="primary"
-              size="md"
-              rightIcon={<ArrowRight className="w-4 h-4" />}
-            >
-              Start a Project
-            </Button>
-          </div>
-
-          {/* Tablet / Mobile Menu Toggle Button */}
-          <div className="flex xl:hidden items-center gap-2">
-            <Button
-              href="/contact"
-              variant="primary"
-              size="sm"
-              className="text-xs px-3"
-            >
-              Get in Touch
-            </Button>
-
-            <button
-              type="button"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 rounded-lg text-[#2E4038] hover:text-[#0A1914] hover:bg-[#F1F5F2] focus-visible:outline-2 focus-visible:outline-[#9E1A2F]"
-              aria-expanded={mobileMenuOpen}
-              aria-label="Toggle navigation menu"
-            >
-              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          <div className="flex items-center gap-2">
+            <Link href="/contact" className={cn(
+              "group hidden min-h-10 items-center gap-2 border px-4 text-xs font-semibold transition-colors sm:inline-flex",
+              overHero ? "border-white/35 text-white hover:bg-white hover:text-[#101916]" : "border-[#101916]/25 text-[#101916] hover:border-[#9b1730] hover:bg-[#9b1730] hover:text-white"
+            )}>
+              Let&apos;s talk
+              <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" strokeWidth={1.75} />
+            </Link>
+            <button type="button" onClick={() => setMobileMenuOpen((open) => !open)} className={cn(
+              "grid h-10 w-10 place-items-center border transition-colors lg:hidden",
+              overHero ? "border-white/30 hover:bg-white/10" : "border-black/15 hover:bg-black/5"
+            )} aria-expanded={mobileMenuOpen} aria-label={mobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}>
+              {mobileMenuOpen ? <X className="h-5 w-5" strokeWidth={1.75} /> : <Menu className="h-5 w-5" strokeWidth={1.75} />}
             </button>
           </div>
         </div>
       </Container>
 
-      {/* Mobile Menu Overlay */}
       {mobileMenuOpen && (
-        <div
-          className="fixed left-0 right-0 top-16 sm:top-20 h-[calc(100dvh-64px)] sm:h-[calc(100dvh-80px)] z-50 bg-white xl:hidden flex flex-col justify-between border-t border-[#E1E7E3] shadow-2xl overflow-y-auto"
-          role="dialog"
-          aria-modal="true"
-        >
-          <div className="p-6 space-y-2">
-            <div className="flex items-center justify-between mb-3">
-              <p className="text-xs font-semibold uppercase tracking-wider text-[#64766E]">
-                Menu
-              </p>
-              <span className="inline-flex items-center gap-1 text-xs text-[#9E1A2F] font-medium bg-[#FDF2F4] px-2 py-0.5 rounded-full">
-                <Sparkles className="w-3 h-3" /> Digital Studio
-              </span>
-            </div>
-            {NAV_LINKS.map((link) => {
-              const isActive = pathname === link.href || (link.href !== "/" && pathname.startsWith(link.href));
-              return (
-                <Link
-                  key={link.name}
-                  href={link.href}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className={cn(
-                    "flex items-center justify-between py-3 px-3.5 rounded-lg text-base font-medium transition-colors",
-                    isActive
-                      ? "bg-[#FDF2F4] text-[#9E1A2F] font-semibold"
-                      : "text-[#0A1914] hover:bg-[#F1F5F2]"
-                  )}
-                >
-                  <div className="flex items-center gap-2">
-                    <span>{link.name}</span>
-                    {link.badge && (
-                      <span className="text-[10px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded-full bg-[#FDF2F4] text-[#9E1A2F] border border-[#F5C7CE]">
-                        {link.badge}
-                      </span>
-                    )}
-                  </div>
-                  <ArrowRight className="w-4 h-4 opacity-40" />
+        <div className="fixed inset-x-0 top-16 z-50 h-[calc(100dvh-4rem)] overflow-y-auto bg-[#f5f4ef] text-[#101916] sm:top-20 sm:h-[calc(100dvh-5rem)] lg:hidden">
+          <Container size="xl" className="flex min-h-full flex-col justify-between py-8">
+            <nav className="divide-y divide-black/10" aria-label="Mobile navigation">
+              {NAV_LINKS.map((link, index) => (
+                <Link key={link.name} href={link.href} onClick={() => setMobileMenuOpen(false)} className="group flex items-center justify-between py-5 text-3xl font-semibold tracking-[-0.04em]">
+                  <span><span className="mr-4 align-middle text-[10px] font-semibold tracking-[0.16em] text-[#9b1730]">0{index + 1}</span>{link.name}</span>
+                  <ArrowUpRight className="h-5 w-5 text-[#9b1730] transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" strokeWidth={1.75} />
                 </Link>
-              );
-            })}
-          </div>
-
-          {/* Mobile Menu Footer Action */}
-          <div className="p-6 bg-[#F8FAF8] border-t border-[#E1E7E3] space-y-3">
-            <Button
-              href="/contact"
-              variant="primary"
-              size="lg"
-              className="w-full justify-center"
-              rightIcon={<ArrowRight className="w-5 h-5" />}
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Start a Project
-            </Button>
-            <p className="text-xs text-center text-[#52665C]">
-              Have an idea? Contact us at{" "}
-              <a href="mailto:info@laliguras.com" className="text-[#9E1A2F] underline">
-                info@laliguras.com
-              </a>
-            </p>
-          </div>
+              ))}
+            </nav>
+            <div className="border-t border-black/15 pt-6">
+              <p className="mb-4 max-w-xs text-sm leading-6 text-[#65736c]">Have an ambitious digital product in mind?</p>
+              <Link href="/contact" onClick={() => setMobileMenuOpen(false)} className="inline-flex min-h-12 items-center gap-2 bg-[#9b1730] px-5 text-sm font-semibold text-white">Start a conversation <ArrowUpRight className="h-4 w-4" strokeWidth={1.75} /></Link>
+            </div>
+          </Container>
         </div>
       )}
     </header>
   );
 };
-

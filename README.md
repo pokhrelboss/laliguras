@@ -140,7 +140,7 @@ npx tsc --noEmit
 - **Sijan Kafle**
 - **Arbin Giri**
 - **Ishan Bhandari**
-- **Ayush Nepaune**
+- **Aayush Nepaune**
 - **Sukriti Rimal**
 
 ---

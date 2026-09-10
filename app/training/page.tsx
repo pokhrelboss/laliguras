@@ -8,28 +8,30 @@ import { CourseCatalog } from "@/components/sections/CourseCatalog";
 import { CheckCircle2, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Health & Safety Training Modules | Accredited Courses",
+  title: "SafeStep Training Modules",
   description:
-    "Browse Laliguras accredited occupational health and safety training modules: Manual Handling, Fire Safety, COSHH, Working at Height, PPE, and Emergency Response.",
+    "Browse the workplace health and safety modules currently mapped for the SafeStep product project.",
 };
 
 export default function TrainingPage() {
   return (
-    <div className="bg-[#F8FAF8] py-16 md:py-24">
-      <Container size="xl" className="space-y-12">
+    <div className="bg-[#f5f4ef]">
+      <section className="page-hero py-20 sm:py-28">
+      <Container size="xl">
         {/* Page Header */}
-        <div className="max-w-3xl mx-auto text-center space-y-4">
-          <Badge variant="primary" size="md">
-            SAFESTEP COURSEWARE • ENGINEERED BY LALIGURAS
-          </Badge>
-          <h1 className="text-4xl sm:text-5xl font-extrabold text-[#0A1914] tracking-tight">
-            Accredited Workplace Safety Modules
+        <div className="relative z-10 max-w-4xl space-y-5">
+          <span className="eyebrow">SafeStep · A Laliguras project</span>
+          <h1 className="text-balance text-5xl font-semibold leading-[.95] tracking-[-0.06em] text-[#101916] sm:text-7xl">
+            Workplace safety modules, <span className="display-serif text-[#9b1730] italic">clearly mapped.</span>
           </h1>
-          <p className="text-base sm:text-lg text-[#3D4F47] leading-relaxed">
-            The safety training catalog engineered by <strong>Laliguras</strong> for the <strong>SafeStep</strong> platform. Every module combines clear instruction, 360° virtual scenarios, and verifiable certifications.
+          <p className="max-w-2xl border-l border-[#9b1730] pl-6 text-base leading-8 text-[#52635b]">
+            The current course catalogue for SafeStep, a separate health and safety training product project created by Laliguras.
           </p>
         </div>
+      </Container>
+      </section>
 
+      <Container size="xl" className="space-y-12 py-20 sm:py-28">
 
         {/* Interactive Filterable Catalog */}
         <CourseCatalog initialCourses={COURSES} />

@@ -48,6 +48,7 @@ export const metadata: Metadata = {
     title: "Laliguras — Digital Product Engineering & Technology Studio",
     description:
       "Engineering ambitious digital products, custom enterprise platforms, and interactive 3D simulations.",
+    images: [{ url: "/brand/laliguras-himalaya-hero.webp", width: 1942, height: 809, alt: "Himalayan ridges and Laliguras rhododendrons at dawn" }],
   },
   twitter: {
     card: "summary_large_image",
@@ -85,11 +86,9 @@ export default function RootLayout({
     },
     contactPoint: {
       "@type": "ContactPoint",
-      telephone: "+977 9801234567",
       contactType: "customer service",
       email: "info@laliguras.com",
     },
-    sameAs: ["https://linkedin.com", "https://twitter.com"],
   };
 
   return (
@@ -100,7 +99,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="min-h-screen flex flex-col bg-[#F8FAF8] text-[#0A1914] antialiased selection:bg-[#FDF2F4] selection:text-[#9E1A2F]">
+      <body className="min-h-screen flex flex-col bg-[#f5f4ef] text-[#101916] antialiased">
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />

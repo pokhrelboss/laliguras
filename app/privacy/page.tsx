@@ -52,7 +52,7 @@ export default function PrivacyPage() {
             </p>
             <ul className="list-disc pl-5 space-y-1 text-xs sm:text-sm">
               <li>Deliver interactive health, safety, and compliance courses.</li>
-              <li>Issue and cryptographically verify training completion certificates.</li>
+              <li>Issue and manage training completion records when that service is enabled.</li>
               <li>Provide organizational administrators with workforce compliance reporting.</li>
               <li>Improve simulation fidelity and user interface responsiveness.</li>
             </ul>

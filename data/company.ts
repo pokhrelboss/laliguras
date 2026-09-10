@@ -56,17 +56,9 @@ export const COMPANY_INFO = {
 
   contact: {
     email: "info@laliguras.com",
-    phone: "+977 9801234567",
     location: "Lalitpur, Nepal",
     hours: "Monday – Friday, 9:00 AM – 6:00 PM (NPT)",
   },
-
-  studioStats: [
-    { value: "100%", label: "Client Satisfaction" },
-    { value: "6+", label: "Product Engineers & Designers" },
-    { value: "Enterprise", label: "Architecture Grade" },
-    { value: "360°", label: "Spatial & Interactive Capabilities" },
-  ],
 
   howWeWork: [
     {
@@ -121,7 +113,7 @@ export const COMPANY_INFO = {
     {
       shortLabel: "Safer Workplaces",
       title: "Safer Workplaces",
-      description: "A proven reduction in workplace accidents, minimized operational downtime, and a pervasive safety-first team culture.",
+      description: "Training designed to support clearer safety awareness and more consistent workplace practice.",
     },
   ] as ValueProposition[],
 
@@ -142,7 +134,7 @@ export const COMPANY_INFO = {
       "100% mobile-friendly interface for learning anytime, anywhere",
       "Clear personal progress tracking and learning streaks",
       "Instant feedback on quizzes with clear rationales",
-      "Downloadable, industry-recognized certificates of completion",
+      "Downloadable certificates of completion",
       "Practical, life-saving knowledge applicable on day one",
     ],
   },
@@ -151,7 +143,7 @@ export const COMPANY_INFO = {
     {
       step: "01",
       title: "Choose Training",
-      description: "Select from our accredited catalog or request customized modules tailored to your industry risks.",
+      description: "Select from the course catalog or request customized modules tailored to your industry risks.",
     },
     {
       step: "02",
@@ -180,5 +172,4 @@ export const COMPANY_INFO = {
     },
   ],
 };
-
 
