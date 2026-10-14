@@ -36,8 +36,8 @@ export const SafeStepFeaturedBanner: React.FC = () => {
       icon: Video,
     },
     {
-      title: "Interactive 360° Scenarios",
-      description: "Spatial browser simulations where workers navigate and pinpoint hazards.",
+      title: "Interactive Scenario Modules",
+      description: "Digital practical modules where workers learn and pinpoint critical risks.",
       icon: Compass,
     },
     {
@@ -135,7 +135,7 @@ export const SafeStepFeaturedBanner: React.FC = () => {
             <div className="space-y-1 text-center sm:text-left">
               <h4 className="text-xl font-bold text-white">Experience SafeStep in Action</h4>
               <p className="text-sm text-white/80 max-w-xl">
-                Explore the full case study with architectural insights, learner dashboards, and a live in-browser 360° hazard simulation demo.
+                Explore the full case study with architectural insights, learner dashboards, module workflows, and verifiable certifications.
               </p>
             </div>
             <div className="flex items-center gap-3 shrink-0">

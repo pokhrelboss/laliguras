@@ -33,8 +33,8 @@ export const FAQS: FAQItem[] = [
   },
   {
     id: "faq-6",
-    question: "How does Laliguras approach interactive 360° simulations?",
-    answer: "We begin with the learning action: what a person should notice, decide, or practise. SafeStep's current public preview uses a lightweight browser interaction to demonstrate hazard identification and immediate feedback without presenting it as a finished simulation engine.",
+    question: "How does Laliguras approach interactive scenario-based learning?",
+    answer: "We begin with the learning action: what a person should notice, decide, or practise. In platforms like SafeStep, we build interactive risk-evaluation flows and contextual assessments to verify safety comprehension rather than relying on passive video playback.",
     category: "Engineering & Tech",
   },
   {

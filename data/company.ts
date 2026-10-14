@@ -56,8 +56,13 @@ export const COMPANY_INFO = {
 
   contact: {
     email: "team@pokhrel.tech",
-    location: "Chitwan, Nepal",
-    hours: "Monday – Friday, 9:00 AM – 6:00 PM (NPT)",
+    office: "ISMT College, Bharatpur-12, Chitwan, Nepal",
+    location: "ISMT College, Bharatpur-12, Chitwan, Nepal",
+    city: "Bharatpur, Chitwan",
+    country: "Nepal",
+    hours: "Sunday – Friday, 9:00 AM – 6:00 PM (NPT)",
+    mapEmbedUrl: "https://maps.google.com/maps?q=ISMT+College,+Bharatpur-12,+Chitwan,+Nepal&t=&z=16&ie=UTF8&iwloc=&output=embed",
+    googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=ISMT+College+Bharatpur+Chitwan+Nepal",
   },
 
   howWeWork: [

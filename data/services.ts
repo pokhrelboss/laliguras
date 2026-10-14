@@ -44,13 +44,13 @@ export const SERVICES: Service[] = [
   {
     id: "interactive-3d-simulations",
     slug: "interactive-3d-simulations",
-    title: "Interactive & 360° Simulations",
-    shortDescription: "Immersive 360-degree spatial hazard identification, browser simulations, and interactive visual learning.",
-    fullDescription: "We bridge the gap between static content and real-world comprehension. Using modern browser capabilities and spatial design, we build interactive 360° scenarios and simulations that allow users to explore environments, identify risks, and make real-time decisions without physical danger.",
+    title: "Interactive Simulations & Training",
+    shortDescription: "Interactive spatial hazard identification, browser scenario simulations, and practical visual learning.",
+    fullDescription: "We bridge the gap between static content and real-world comprehension. Using modern browser capabilities and interactive design, we build practical scenarios and simulations that allow users to explore situations, identify risks, and make real-time decisions without physical danger.",
     iconName: "Compass",
     deliverables: [
-      "360° Spatial Workplace Hazard Simulators",
-      "Interactive Decision Branching Scenarios",
+      "Interactive Workplace Scenario Simulators",
+      "Interactive Decision Branching Workflows",
       "Real-time Feedback & Hotspot Assessment",
       "Cross-device Touch & Mobile Optimization",
     ],

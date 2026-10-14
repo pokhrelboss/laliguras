@@ -9,7 +9,7 @@ import { ScrollReveal } from "@/components/ui/ScrollReveal";
 
 const FEATURES = [
   "Role-aware learner dashboard",
-  "Interactive 360° hazard scenarios",
+  "Interactive scenario assessments",
   "Structured modules and assessments",
   "Progress and certificate workflows",
 ] as const;

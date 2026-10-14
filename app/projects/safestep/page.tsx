@@ -4,7 +4,6 @@ import Link from "next/link";
 import { ArrowLeft, ArrowUpRight, MoveDown } from "lucide-react";
 import { Container } from "@/components/ui/Card";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
-import { InteractiveHazardPreview } from "@/components/sections/InteractiveHazardPreview";
 import { PROJECTS } from "@/data/projects";
 
 const safeStep = PROJECTS[0];
@@ -74,16 +73,12 @@ export default function SafeStepProjectPage() {
         </Container>
       </section>
 
-      <section id="interactive-sim" className="border-y border-black/10 bg-[#faf9f5] py-6 sm:py-10">
-        <InteractiveHazardPreview />
-      </section>
-
       <section className="bg-[#102a22] py-24 text-white sm:py-32">
         <Container size="xl">
           <ScrollReveal>
             <div className="grid gap-12 lg:grid-cols-[1fr_auto] lg:items-end">
               <div><p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#ef93a5]">Project perspective</p><h2 className="mt-6 max-w-4xl text-balance text-4xl font-semibold leading-[1] tracking-[-0.055em] sm:text-6xl">Safety learning works best when people can <span className="display-serif text-[#f3c7cf] italic">act, not only watch.</span></h2></div>
-              <div className="max-w-sm border-l border-white/20 pl-6"><p className="text-sm leading-7 text-white/62">The interactive scenario above is a functional preview. It remains intentionally lightweight while demonstrating the product’s learning direction.</p><Link href="/contact" className="group mt-7 inline-flex min-h-12 items-center gap-2 bg-[#9b1730] px-5 text-sm font-semibold text-white transition-colors hover:bg-white hover:text-[#101916]">Discuss a project <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" strokeWidth={1.75} /></Link></div>
+              <div className="max-w-sm border-l border-white/20 pl-6"><p className="text-sm leading-7 text-white/62">SafeStep is engineered for measurable outcomes—combining structured digital course modules, automated compliance audit logs, and verifiable safety certification.</p><Link href="/contact" className="group mt-7 inline-flex min-h-12 items-center gap-2 bg-[#9b1730] px-5 text-sm font-semibold text-white transition-colors hover:bg-white hover:text-[#101916]">Discuss a project <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" strokeWidth={1.75} /></Link></div>
             </div>
           </ScrollReveal>
         </Container>

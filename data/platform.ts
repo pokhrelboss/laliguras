@@ -34,12 +34,12 @@ export const PLATFORM_CAPABILITIES: PlatformCapability[] = [
     iconName: "PlayCircle",
   },
   {
-    id: "360-scenarios",
-    title: "360° Workplace Scenarios",
-    subtitle: "Immersive simulated inspection tours",
-    description: "The product direction includes panoramic workplace recreations. The public preview demonstrates the hazard-identification and feedback interaction in a lightweight browser experience.",
+    id: "practical-scenarios",
+    title: "Practical Scenario Modules",
+    subtitle: "Realistic workplace inspection exercises",
+    description: "The product direction includes guided workplace scenarios where workers inspect environments, evaluate risks, and receive instant protocol feedback.",
     iconName: "Scan",
-    badge: "Signature Feature",
+    badge: "Practical Learning",
   },
   {
     id: "assessments",

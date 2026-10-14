@@ -49,7 +49,14 @@ export const Footer: React.FC = () => (
       <div className="flex flex-col gap-5 py-7 text-[11px] text-white/42 sm:flex-row sm:items-center sm:justify-between">
         <p>© 2026 Laliguras. Built in Nepal, for everywhere.</p>
         <div className="flex flex-wrap items-center gap-5">
-          <span className="inline-flex items-center gap-2"><MapPin className="h-3.5 w-3.5 text-[#ef93a5]" strokeWidth={1.75} /> {COMPANY_INFO.contact.location}</span>
+          <a
+            href={COMPANY_INFO.contact.googleMapsUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 transition-colors hover:text-white"
+          >
+            <MapPin className="h-3.5 w-3.5 text-[#ef93a5]" strokeWidth={1.75} /> {COMPANY_INFO.contact.location}
+          </a>
           <span className="inline-flex items-center gap-2"><Mail className="h-3.5 w-3.5 text-[#ef93a5]" strokeWidth={1.75} /> {COMPANY_INFO.contact.email}</span>
           <Link href="/privacy" className="hover:text-white">Privacy</Link>
           <Link href="/terms" className="hover:text-white">Terms</Link>

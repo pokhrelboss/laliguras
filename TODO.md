@@ -142,3 +142,19 @@
 - [x] Run `npm run lint` — zero warnings and errors
 - [x] Run `npx tsc --noEmit` — zero diagnostics
 - [x] Run `npm run build` — successful production build across all 19 generated routes
+
+## Phase 17: Official Team, Location & Simulator Updates (2026-10-14)
+- [x] Integrate official company logo from `/laliguras/logo` (`logo/laliguras.png`) across desktop/mobile navbars and footer
+- [x] Update team members with provided roles, sequence, and real portraits:
+  1. Ishan Bhandari — Communication Lead / Analyst
+  2. Sakshyam Pokhrel — Deputy Project Manager
+  3. Sukriti Rimal — Project Manager / Technical Lead / Developer
+  4. Aayush Neupane — Presentation & ePortfolio Coordinator / UI Support
+  5. Arbin Giri — Research & Quality Analyst
+  6. Sijan Kafle — Documentation Manager
+- [x] Remove the 360° workplace hazard scenario simulator (`InteractiveHazardPreview`) from SafeStep showcase (`/projects/safestep`) and Platform (`/platform`)
+- [x] Add official office location: **ISMT College, Bharatpur-12, Chitwan, Nepal**
+- [x] Embed responsive interactive Google Map iframe on `/contact` pointing to ISMT College Bharatpur
+- [x] Add office working hours, location details, direct Google Maps link, and footer location links
+- [x] Verify production build, TypeScript, and linting
+- [x] Push all changes to GitHub repository `pokhrelboss/laliguras`

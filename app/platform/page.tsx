@@ -4,7 +4,6 @@ import { Container, Card } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { PLATFORM_CAPABILITIES } from "@/data/platform";
-import { InteractiveHazardPreview } from "@/components/sections/InteractiveHazardPreview";
 import {
   BookOpen,
   Sparkles,
@@ -27,7 +26,7 @@ import {
 export const metadata: Metadata = {
   title: "SafeStep Platform | Comprehensive Workplace Safety Training",
   description:
-    "Explore the SafeStep training ecosystem: 360° hazard simulations, video lessons, knowledge assessments, and centralized compliance reporting.",
+    "Explore the SafeStep training ecosystem: interactive learning modules, video lessons, knowledge assessments, and centralized compliance reporting.",
 };
 
 export default function PlatformPage() {
@@ -69,9 +68,6 @@ export default function PlatformPage() {
           </div>
         </Container>
       </section>
-
-      {/* Interactive 360 Scenario Simulation */}
-      <InteractiveHazardPreview />
 
       {/* 10 Core Platform Capabilities */}
       <section className="py-16 md:py-24 bg-white border-b border-[#E1E7E3]" id="capabilities">
